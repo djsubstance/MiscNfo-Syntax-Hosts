@@ -1,0 +1,39 @@
+It is recommended to avoid URL parameters and to use hyphens to separate words in the URL structure, rather than underscores.
+HIGH
+Add a meta description tag to provide a brief and informative summary of the page's content for search engines.
+HIGH
+To ensure that Search Engines can accurately identify the topic of this webpage, it is important to include the most common keywords in the title tag, meta description, and heading tags.
+HIGH
+Consider using structured data in your webpage as it can help search engines gain a better understanding of your content.
+HIGH
+To improve the website experience for your visitors, it is recommended to eliminate any render-blocking resources on this webpage.
+HIGH
+Using images in a modern format can significantly reduce the file size and improve the loading speed of a webpage, providing a better user experience and potentially increasing engagement.
+HIGH
+Users may abandon pages that take longer than 5 seconds to load, resulting in a potential loss of up to 50% of visitors. Faster loading pages can lead to increased traffic, better conversions, and higher sales.
+HIGH
+Consider reducing the HTML size to improve loading times and retain visitors.
+HIGH
+By creating a custom 404 error page with helpful links and information, users are more likely to stay on the site and continue to explore.
+MEDIUM
+Add a sitemap file to help search engine crawlers index content more thoroughly and quickly.
+MEDIUM
+To provide a good user experience, Google recommends that sites should aim for a First Contentful Paint value of 1.8 seconds or less.
+MEDIUM
+Serve properly sized images to reduce page loading times and to improve user's experience.
+MEDIUM
+Reducing the Document Object Model (DOM) size can lead to faster page loading times, improved site performance, and better user experience by decreasing the amount of time it takes for the browser to process and render the page.
+MEDIUM
+Using social media meta tags can improve the appearance and content of shared links on social media platforms, potentially increasing click-through rates and engagement with the page.
+MEDIUM
+Avoid performance and security issues by adding "rel=noopener" or "rel=noreferrer" to your "target=_blank" links.
+LOW
+Using more than 20 HTTP requests on a webpage can negatively impact the loading time.
+LOW
+Consider moving inline CSS styles to an external stylesheet to improve site performance and maintain separation of content and design.
+LOW
+Strip out any unnecessary metadata to improve loading time, security, and privacy. Metadata should not exceed 16% of the image size.
+LOW
+This website either lacks a favicon or it has not been referenced properly.
+LOW
+Replace deprecated HTML tags with their modern equivalents or appropriate CSS rules.
