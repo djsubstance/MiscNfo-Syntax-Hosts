@@ -1,0 +1,25 @@
+/core          contains all the files provided by core that doesn't have an explicit reason to be in the / directory.
+/libraries     contains third-party libraries. It's not used by Drupal core, but it's commonly found in many sites.
+/modules       directory into which all custom and contributed modules go.
+This directory contains the contrib and custom sub-directories, which can be used to make easier to keep track of the modules.
+/profiles      contains contributed and custom profiles.
+/themes        contains contributed and custom (sub)themes.
+/sites         used for running Drupal multi-site setups and it's used in the same way as in Drupal 7. 
+  Modules and themes in 
+  /sites/all/modules and 
+  /sites/all/themes will override the ones in the base modules and themes directories. 
+  Modules in /sites/SITENAME/modules and 
+  /sites/SITENAME/themes will override others for the given site.
+
+  /vendor      where Composer dependencies go, for example Symfony and Twig.
+
+  /core       primarily useful to know for new core hackers
+    /core/assets - Various external libraries used by Core. jQuery, underscore, modernizer etc.
+    /core/misc - Frontend code that Drupal Core depends on.
+    /core/includes - Functionality that is to low level to be modular. Such as the module system itself.
+    /core/lib - Drupal Core classes.
+    /core/modules - Drupal Core modules.
+    /core/profiles - Drupal Core installation profiles. Minimal, Standard, Testing and Testing multilingual installation profiles by default.
+    /core/scripts - Various CLI scripts, mostly used by developers.
+    /core/tests - Drupal Core tests.
+    /core/themes - Drupal Core themes.
