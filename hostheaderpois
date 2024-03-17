@@ -1,0 +1,44 @@
+Host Header Attack:
+
+
+This header can sometimes trick the application into generating links, redirects, or content based on the host header value you control.
+
+X-Forwarded-Host: evil.com
+
+X-Forwarded-Scheme: https
+
+Similar to X-Forwarded-Host, but for the scheme, which can affect URL generation.
+
+
+This header is used to simulate the originating IP address of a client connecting through an HTTP proxy or load balancer. Some applications might change behavior based on perceived client IP.
+X-Forwarded-For: 127.0.0.1
+
+
+This is a less common header but can sometimes be used in place of Host or to override it if the application is not correctly prioritizing headers.
+X-Host: vulnerable-website.com
+
+Another header used to indicate the original client IP, similar to X-Forwarded-For, and can influence the application's output.
+True-Client-IP: 127.0.0.1
+
+
+This custom header is not universally recognized but can be used in testing if the application has implemented custom logic for IP authorization.
+X-Custom-IP-Authorization: 127.0.0.1
+
+This header is intended to indicate the IP address the request originated from and can sometimes be abused in similar ways to X-Forwarded-For.
+X-Originating-IP: 127.0.0.1
+
+Indicates the port the request was made through. It might affect generated URLs or application behavior in some configurations.
+X-Forwarded-Port: 443
+
+
+If the application supports URL rewriting based on headers, this could be used to inject or alter paths.
+X-Rewrite-URL: /malicious/path
+
+Similar to X-Rewrite-URL, it's used in applications that support header-based URL control, potentially overriding the actual request URL.
+X-Original-URL: /malicious/path
+
+When crafting these headers, the goal is to observe how the server's response
+changes based on your modifications. If any of these headers cause the server to
+reflect your input in its response, or otherwise change the response in a way that
+could be maliciously exploited, you've likely identified a cache poisoning vulnerability.
+
