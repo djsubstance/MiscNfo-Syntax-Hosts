@@ -1,0 +1,69 @@
+ 
+ ░▒▓█▓▒░ ▒▓███████▓▒░        ░▒▓█▓▒░ ▒▓████████▓  ▒░▒▓██████▓▒  ░▒▓████████▓▒░ 
+ ░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░       ░▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░     
+ ░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░       ░▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░           ░▒▓█▓▒░     
+ ░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░       ░▒▓█▓▒░ ▒▓██████▓▒░ ░▒▓█▓▒░           ░▒▓█▓▒░     
+ ░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░           ░▒▓█▓▒░     
+ ░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░    ░▒▓█▓▒░     
+ ░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ░▒▓██████▓▒░░ ▒▓████████▓▒ ░▒▓██████▓▒░     ░▒▓█▓▒░     
+                                                                        
+░▒▓█▓▒░░▒▓█▓▒░ ▒▓████████▓▒ ░░▒▓██████▓▒░░ ▒▓███████▓▒░  ░▒▓████████▓▒ ░▒▓███████▓▒░ ░▒▓███████▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓████████▓▒░ ▒▓██████▓▒░  ░▒▓████████▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓██████▓▒░   ░▒▓███████▓▒░ ░▒▓██████▓▒░  
+░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░        ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░ ▒▓████████▓▒ ░▒▓█▓▒░░▒▓█▓▒░ ▒▓███████▓▒░  ░▒▓████████▓▒ ░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░  
+                                                                                      
+                              [ Custom Headers to Inject ]
+X-Forwarded-Scheme
+X-Forwarded-For
+X-Forwarded-Host
+X-Frame-Options
+
+
+[ :: X-Forwarded-Host :: ] 
+Attempt to manipulate the Host header that the application sees, e.g., 
+X-Forwarded-Host: attacker.com. This could trick the application into 
+generating links, redirects, or content with this host, potentially poisoning 
+the cache with malicious content.
+
+X-Forwarded-Scheme :: ]
+Similar to the Host header, manipulating the scheme, e.g., X-Forwarded-Scheme: https, might affect how URLs are constructed in the application, leading to cache poisoning.
+
+[ :: X-Forwarded-For :: ]
+Injecting IP addresses, e.g., X-Forwarded-For: 127.0.0.1, to simulate requests from different origins and observe how the application caches responses based on perceived client IP.
+
+[ :: X-Frame-Options :: ]
+Injecting this header with values like DENY or SAMEORIGIN could influence caching behavior related to clickjacking protection mechanisms.
+
+[ :: Content-Type :: ]
+Changing the Content-Type header, e.g., to application/json or text/plain, can test how the application handles and caches content based on MIME type.
+
+[ :: Cache-Control :: ]
+Setting Cache-Control: no-store or no-cache might reveal if the application or its cache respects these directives, potentially uncovering cache-related vulnerabilities.
+
+[ :: Accept :: ]
+Modify the Accept header to uncommon types, e.g., Accept: application/x-evil, to see if the application generates different cacheable responses based on accepted content types.
+
+[ :: Accept-Language :: ]
+Manipulating this header, e.g., Accept-Language: es-x-poison, could test for cache poisoning through content localization.
+
+[ :: User-Agent :: ] 
+Injecting a unique or malicious User-Agent string, e.g., User-Agent: Mozilla/5.0 (CachePoison; x64) EvilBrowser/1.0, to explore how the application's response and caching vary with different client identifiers.
+
+Cookies: 
+Altering or adding cookies, e.g., Cookie: session=evil, to examine if and how personalized content is cached and if it can be poisoned.
+
+Steps for Testing with Burp Repeater
+ [*] Capture the Request: Use Burp Proxy to intercept the request you want to test, then send it to Repeater.
+
+ [*] Modify Headers: In Repeater, modify the request by adding, altering, or removing headers based on the suggestions above.
+
+ [*] Send and Analyze: Send the modified request and carefully analyze the response. Look for indications that your injected header 
+     affected the response in a way that could be exploited if cached.
+
+ [*] Repeat with Variations: Test multiple variations of headers and values to thoroughly explore potential vulnerabilities.
+
+ [*] Validate Cache Behavior: If possible, confirm if a potentially poisoned response gets cached by making subsequent
+     requests (without the injected headers) and observing if the altered content is served
