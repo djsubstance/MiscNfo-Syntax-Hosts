@@ -1,0 +1,49 @@
+# Filename: HTTP_req_resp_example
+# Desc: Examples of properly constructed HTTP request and response
+The main reason of posting this is to have a reference of what 
+headers are do what and what version depends on which headers. 
+
+
+This will likely get big, keep checking back.
+
+Testing web connections with curl is powerful and comes with Linux,
+most people do not realize the power of it, but for now 0
+HTTP/1.1 
+-s - Silent
+-L - Follow redir
+-k - Allow untrusted cert
+--user-agent 'XX' - *mustU be set for consistant behavor
+  
+curl -sLk --user-agent 'moz' https://ogs.google.com -I
+
+
+
+
+HTTP1.1 - The standard as of 2o24
+-------------------------------------
+Request:
+
+
+Response:
+
+
+HTTP/2 200               # 2xx = successful 
+accept-ranges: bytes
+vary: Accept-Encoding, Origin
+content-encoding: gzip
+content-type: text/javascript; charset=UTF-8
+content-security-policy-report-only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/gws-team
+cross-origin-resource-policy: cross-origin
+cross-origin-opener-policy: same-origin; report-to="gws-team"
+report-to: {"group":"gws-team","max_age":2592000,"endpoints":[{"url":"https://csp.mysite.com/csp/report-to/gws-team"}]}
+content-length: 8401881
+date: Wed, 20 Mar 2024 07:32:45 GMT
+expires: Thu, 20 Mar 2025 07:32:45 GMT
+cache-control: public, immutable, max-age=31536000
+last-modified: Fri, 15 Mar 2024 20:50:32 GMT
+x-content-type-options: nosniff
+server: sffe
+x-xss-protection: 0
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
