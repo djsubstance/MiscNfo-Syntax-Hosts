@@ -1,0 +1,195 @@
+;; SOA Record
+amazon.com	3600	IN	SOA	hunts.ns.cloudflare.com. dns.cloudflare.com. 2046300163 10000 2400 604800 3600
+
+;; NS Records
+amazon.com.	86400	IN	NS	hunts.ns.cloudflare.com.
+amazon.com.	86400	IN	NS	liz.ns.cloudflare.com.
+
+;; A Records
+ab.amazon.com.	1	IN	A	44.215.132.188
+academy.amazon.com.	1	IN	A	3.253.171.215
+ac.amazon.com.	1	IN	A	3.33.165.64
+ac.amazon.com.	1	IN	A	15.197.171.15
+ads.amazon.com.	1	IN	A	99.84.66.90
+ads.amazon.com.	1	IN	A	99.84.66.63
+ads.amazon.com.	1	IN	A	99.84.66.46
+ads.amazon.com.	1	IN	A	99.84.66.12
+amazon.com.	1	IN	A	205.251.242.103
+amazon.com.	1	IN	A	54.239.28.85
+amazon.com.	1	IN	A	52.94.236.248
+api.amazon.com.	1	IN	A	52.46.149.57
+as.amazon.com.	1	IN	A	176.32.101.119
+beta.amazon.com.	1	IN	A	207.171.181.17
+business.amazon.com.	1	IN	A	65.8.161.68
+business.amazon.com.	1	IN	A	65.8.161.118
+business.amazon.com.	1	IN	A	65.8.161.89
+business.amazon.com.	1	IN	A	65.8.161.42
+cc.amazon.com.	1	IN	A	52.46.130.118
+cloud.amazon.com.	1	IN	A	3.33.147.88
+cloud.amazon.com.	1	IN	A	15.197.140.28
+cn.amazon.com.	1	IN	A	35.71.168.103
+cn.amazon.com.	1	IN	A	52.223.38.53
+community.amazon.com.	1	IN	A	3.33.147.88
+community.amazon.com.	1	IN	A	15.197.140.28
+deals.amazon.com.	1	IN	A	3.33.147.88
+deals.amazon.com.	1	IN	A	15.197.140.28
+design.amazon.com.	1	IN	A	52.84.162.108
+design.amazon.com.	1	IN	A	52.84.162.90
+design.amazon.com.	1	IN	A	52.84.162.89
+design.amazon.com.	1	IN	A	52.84.162.119
+developer.amazon.com.	1	IN	A	44.215.137.210
+docs.amazon.com.	1	IN	A	18.161.6.121
+docs.amazon.com.	1	IN	A	18.161.6.85
+docs.amazon.com.	1	IN	A	18.161.6.127
+docs.amazon.com.	1	IN	A	18.161.6.84
+email.amazon.com.	1	IN	A	176.32.120.155
+email.amazon.com.	1	IN	A	176.32.120.37
+email.amazon.com.	1	IN	A	176.32.121.38
+email.amazon.com.	1	IN	A	176.32.109.22
+games.amazon.com.	1	IN	A	18.161.6.32
+games.amazon.com.	1	IN	A	18.161.6.79
+games.amazon.com.	1	IN	A	18.161.6.60
+games.amazon.com.	1	IN	A	18.161.6.30
+go.amazon.com.	1	IN	A	3.33.147.88
+go.amazon.com.	1	IN	A	15.197.140.28
+health.amazon.com.	1	IN	A	67.220.247.45
+health.amazon.com.	1	IN	A	52.46.157.235
+health.amazon.com.	1	IN	A	67.220.246.105
+help.amazon.com.	1	IN	A	15.197.140.28
+help.amazon.com.	1	IN	A	3.33.147.88
+hub.amazon.com.	1	IN	A	44.199.180.167
+in.amazon.com.	1	IN	A	87.238.85.156
+in.amazon.com.	1	IN	A	87.238.81.156
+learn.amazon.com.	1	IN	A	3.163.24.5
+learn.amazon.com.	1	IN	A	3.163.24.111
+learn.amazon.com.	1	IN	A	3.163.24.62
+learn.amazon.com.	1	IN	A	3.163.24.91
+local.amazon.com.	1	IN	A	176.32.103.130
+login.amazon.com.	1	IN	A	44.215.116.49
+m.amazon.com.	1	IN	A	15.197.140.28
+m.amazon.com.	1	IN	A	3.33.147.88
+mp3.amazon.com.	1	IN	A	15.197.140.28
+mp3.amazon.com.	1	IN	A	3.33.147.88
+mx1.amazon.com.	1	IN	A	72.21.196.25
+mx2.amazon.com.	1	IN	A	72.21.198.25
+mx3.amazon.com.	1	IN	A	207.171.184.25
+my.amazon.com.	1	IN	A	15.197.140.28
+my.amazon.com.	1	IN	A	3.33.147.88
+oa.amazon.com.	1	IN	A	176.32.120.2
+panel.amazon.com.	1	IN	A	18.161.6.100
+panel.amazon.com.	1	IN	A	18.161.6.31
+panel.amazon.com.	1	IN	A	18.161.6.74
+panel.amazon.com.	1	IN	A	18.161.6.119
+pay.amazon.com.	1	IN	A	44.215.117.127
+payments.amazon.com.	1	IN	A	44.215.136.84
+photos.amazon.com.	1	IN	A	44.215.141.217
+play.amazon.com.	1	IN	A	44.199.181.225
+r.amazon.com.	1	IN	A	44.215.128.58
+register.amazon.com.	1	IN	A	176.32.100.138
+relay.amazon.com.	1	IN	A	44.215.116.208
+reseller.amazon.com.	1	IN	A	3.163.189.7
+reseller.amazon.com.	1	IN	A	3.163.189.74
+reseller.amazon.com.	1	IN	A	3.163.189.32
+reseller.amazon.com.	1	IN	A	3.163.189.127
+s1.amazon.com.	1	IN	A	3.33.147.88
+s1.amazon.com.	1	IN	A	15.197.140.28
+secure.amazon.com.	1	IN	A	207.171.166.103
+sentry.amazon.com.	1	IN	A	10.33.111.101
+services.amazon.com.	1	IN	A	44.215.137.39
+sp.amazon.com.	1	IN	A	15.197.171.15
+sp.amazon.com.	1	IN	A	3.33.165.64
+support.amazon.com.	1	IN	A	3.33.147.88
+support.amazon.com.	1	IN	A	15.197.140.28
+track.amazon.com.	1	IN	A	44.215.118.148
+ve.amazon.com.	1	IN	A	15.197.171.15
+ve.amazon.com.	1	IN	A	3.33.165.64
+video.amazon.com.	1	IN	A	3.33.147.88
+video.amazon.com.	1	IN	A	15.197.140.28
+ww.amazon.com.	1	IN	A	15.197.140.28
+ww.amazon.com.	1	IN	A	3.33.147.88
+wwww.amazon.com.	1	IN	A	3.33.147.88
+wwww.amazon.com.	1	IN	A	15.197.140.28
+
+;; CNAME Records
+analytics.amazon.com.	1	IN	CNAME	midway-gateway-4.aea.amazon.com.
+auction.amazon.com.	1	IN	CNAME	s1.amazon.com.
+aws.amazon.com.	1	IN	CNAME	tp.8e49140c2-frontier.amazon.com.
+bf.amazon.com.	1	IN	CNAME	midway-gateway-3.aea.amazon.com.
+buy.amazon.com.	1	IN	CNAME	s1.amazon.com.
+cal.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+c.amazon.com.	1	IN	CNAME	midway-gateway-2-1.aea.amazon.com.
+chat.amazon.com.	1	IN	CNAME	tp.61ab546a0-frontier.amazon.com.
+checkout.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+cm.amazon.com.	1	IN	CNAME	midway-gateway-2-1.aea.amazon.com.
+code.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+connect.amazon.com.	1	IN	CNAME	midway-gateway-2-1.aea.amazon.com.
+cr.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+data.amazon.com.	1	IN	CNAME	data-na.amazon.com.
+dl.amazon.com.	1	IN	CNAME	tp.959749774-frontier.amazon.com.
+events.amazon.com.	1	IN	CNAME	d17hi4dtmgqd44.cloudfront.net.
+forums.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+gd.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+git.amazon.com.	1	IN	CNAME	git.aea.amazon.com.
+gt.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+home.amazon.com.	1	IN	CNAME	www.amazon.com.
+hr.amazon.com.	1	IN	CNAME	midway-gateway-2-2.aea.amazon.com.
+i.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+images.amazon.com.	1	IN	CNAME	d12yb4rynyn0ps.cloudfront.net.
+ipv6.amazon.com.	1	IN	CNAME	tp.bcc57dc31-frontier.amazon.com.
+it.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+link.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+mobile.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+monitor.amazon.com.	1	IN	CNAME	midway-gateway-2-1.aea.amazon.com.
+music.amazon.com.	1	IN	CNAME	tp.7f9f74c4d-frontier.amazon.com.
+p.amazon.com.	1	IN	CNAME	payments.amazon.com.
+payment.amazon.com.	1	IN	CNAME	payments.amazon.com.
+s3.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+share.amazon.com.	1	IN	CNAME	share.aea.amazon.com.
+shop.amazon.com.	1	IN	CNAME	s1.amazon.com.
+sites.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+store.amazon.com.	1	IN	CNAME	s1.amazon.com.
+us.amazon.com.	1	IN	CNAME	www.amazon.com.
+vip.amazon.com.	1	IN	CNAME	secure.amazon.com.
+w.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+wiki.amazon.com.	1	IN	CNAME	midway-gateway-1.aea.amazon.com.
+ws.amazon.com.	1	IN	CNAME	ws-na.assoc-amazon.com.
+www.amazon.com.	1	IN	CNAME	tp.47cf2c8c9-frontier.amazon.com.
+www.m.amazon.com.	1	IN	CNAME	rewrite.amazon.com.
+y.amazon.com.	1	IN	CNAME	midway-gateway-2-2.aea.amazon.com.
+z.amazon.com.	1	IN	CNAME	s1.amazon.com.
+zendesk1._domainkey.amazon.com.	1	IN	CNAME	zendesk1.dkim.email.amazon.dev.
+zendesk2._domainkey.amazon.com.	1	IN	CNAME	zendesk2.dkim.email.amazon.dev.
+
+;; MX Records
+amazon.com.	1	IN	MX	5 amazon-smtp.amazon.com.
+email.amazon.com.	1	IN	MX	10 inbound-smtp.us-east-1.amazonaws.com.
+
+;; NS Records
+track.amazon.com.	1	IN	NS	ns-715.awsdns-25.net.
+track.amazon.com.	1	IN	NS	ns-41.awsdns-05.com.
+track.amazon.com.	1	IN	NS	ns-1931.awsdns-49.co.uk.
+track.amazon.com.	1	IN	NS	ns-1220.awsdns-24.org.
+
+;; TXT Records
+amazon.com.	1	IN	TXT	"facebook-domain-verification=d9u57u52gylohx845ogo1axzpywpmq"
+amazon.com.	1	IN	TXT	"stripe-verification=a27edc0da55836ea6bb7eac592bf2ca8e246eb652608d54493119df7df005afc"
+amazon.com.	1	IN	TXT	"apple-domain-verification=dVkKZnu17XS0EN2X"
+amazon.com.	1	IN	TXT	"canva-site-verification=Hksh9WEUPWP13_SEU1mPMA"
+amazon.com.	1	IN	TXT	"MS=4B600B22799EB2CAC0D8FF0A3A3CAECA5EE2BF3A"
+amazon.com.	1	IN	TXT	"stripe-verification=a5c01aa4d732f4b93154d67983d77982ef1a2db73fecfd4bcd64e224d3ab4075"
+_amazonses.amazon.com.	1	IN	TXT	"t5e6iOHqh2C9K8st+1WtcSRLpAgWMF7rIy8x3lPiToQ="
+_amazonses.amazon.com.	1	IN	TXT	"qqryc/hBeuDn3chFcyh4jtHr6Zeoi/m+CnGU9n1SgXY="
+_amazonses.amazon.com.	1	IN	TXT	"pDP0prKT84EX2I06wF9lbGKZ9xufAHpxOgL7I13IZlU="
+_amazonses.amazon.com.	1	IN	TXT	"p/JCQB8Gx9bKqKqk0W7ItMWoYBru5EQj8Su7hLfLWqU="
+_amazonses.amazon.com.	1	IN	TXT	"ohD9aEDxRc914Rf0UlkG1k+eed2B01QLGR4eSU+1hFM="
+_amazonses.amazon.com.	1	IN	TXT	"zuYVd4rijsOrJP0Cw/WGixcnL0Xa75co52UALoMXygM="
+_amazonses.amazon.com.	1	IN	TXT	"iJwU+OYVMTRBjbKIGDCPEkXHNu+tBXe9EwMWhSw+MXw="
+_amazonses.amazon.com.	1	IN	TXT	"g8dHM46aktpEo9qhfGveIySCd8OBi1qwgedpD6KCqJs="
+amazonses.amazon.com.	1	IN	TXT	"xpCAtu3ZziFIot1xIhyExl01mrF/dJjU5UVlv+fKH5Q="
+amazonses.amazon.com.	1	IN	TXT	"XmrMEXtXNrehjjEWyxIEnbh6NxXyBWuQ/Ke9sYR/2LQ="
+_dmarc.amazon.com.	1	IN	TXT	"v=DMARC1;" "p=quarantine;" "pct=100;" "rua=mailto:report@dmarc.amazon.com;" "ruf=mailto:report@dmarc.amazon.com"
+_domainkey.amazon.com.	1	IN	TXT	"t=y; o=~; r=abuse@amazon.com"
+email.amazon.com.	1	IN	TXT	"v=spf1 include:spf1.amazon.com include:spf2.amazon.com include:amazonses.com ~all"
+email.amazon.com.	1	IN	TXT	"amazonses:CP/qBrh2RnAeRnlZWjyMODyHBFau5Jz4qj5iE4s8reQ="
+m1._domainkey.amazon.com.	1	IN	TXT	"v=DKIM1;k=rsa;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDAiSCfuVglLVcKGSFDAPmf1fg/bwnQkgxVkLdTIc1pIOS/K88Pl7p16oS0SW/h2reFQw0QzTEdCNxeXFLXvuoQbwp5lIn5dObz08zRKO3Fc8EOOCrpMq88MARY7glZPsb4l2DnJqwBtqGI1etN2trLbucmzSS9V89VQKmo0jiU7wIDAQAB"
+spf1.amazon.com.	1	IN	TXT	"spf2.0/pra ip4:207.171.160.0/19 ip4:87.238.80.0/21 ip4:72.21.192.0/19 ip4:194.154.193.192/27 ip4:194.7.41.152/28 ip4:212.123.28.40/32 ip4:203.81.17.0/24 ip4:178.236.10.128/26 ip4:52.94.124.0/28 ip4:99.78.197.208/28 ip4:52.119.213.144/28 -all"
