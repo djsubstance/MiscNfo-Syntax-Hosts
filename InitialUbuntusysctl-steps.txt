@@ -1,0 +1,92 @@
+ 
+
+
+ ░▒▓███████▓▒ ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓███████▓▒  ░░▒▓██████▓▒░ ▒▓████████▓▒  ░▒▓█▓▒░        
+░▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓█▓▒░     ░▒▓█▓▒░        
+░▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░          ░▒▓█▓▒░     ░▒▓█▓▒░        
+ ░▒▓██████▓▒░  ░▒▓██████▓▒░  ░▒▓██████▓▒░ ░▒▓█▓▒░          ░▒▓█▓▒░     ░▒▓█▓▒░        
+       ░▒▓█▓▒░   ░▒▓█▓▒░           ░▒▓█▓▒ ░▒▓█▓▒░          ░▒▓█▓▒░     ░▒▓█▓▒░        
+       ░▒▓█▓▒░   ░▒▓█▓▒░           ░▒▓█▓▒ ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓█▓▒░     ░▒▓█▓▒░        
+░▒▓███████▓▒░    ░▒▓█▓▒░    ░▒▓███████▓▒░  ░▒▓██████▓▒░    ░▒▓█▓▒░     ░▒▓████████▓▒░ 
+             [ Enable Routing Between Interfaces / Other security related ]
+                                                                               
+In UBuntu and most *NIX based OS's, if you have the sudo cmd 'sysctl', get famliar with it:
+(U must be root)
+
+bash# sysctl  -a | grep forwa
+-------------------------------
+net.ipv4.conf.all.bc_forwarding = 0
+net.ipv4.conf.all.forwarding = 0           
+net.ipv4.conf.all.mc_forwarding = 0
+net.ipv4.conf.default.bc_forwarding = 0
+net.ipv4.conf.default.forwarding = 1
+net.ipv4.conf.default.mc_forwarding = 0
+net.ipv4.conf.docker0.bc_forwarding = 0
+net.ipv4.conf.docker0.forwarding = 1
+net.ipv4.conf.docker0.mc_forwarding = 0
+net.ipv4.conf.eth0.bc_forwarding = 0
+net.ipv4.conf.eth0.forwarding = 0         
+net.ipv4.conf.eth0.mc_forwarding = 0
+net.ipv4.conf.eth1.bc_forwarding = 0
+net.ipv4.conf.eth1.forwarding = 1
+net.ipv4.conf.eth1.mc_forwarding = 0
+net.ipv4.conf.lo.bc_forwarding = 0
+net.ipv4.conf.lo.forwarding = 1
+net.ipv4.conf.lo.mc_forwarding = 0
+net.ipv4.conf.tun0.bc_forwarding = 0
+net.ipv4.conf.tun0.forwarding = 1
+net.ipv4.conf.tun0.mc_forwarding = 0
+net.ipv4.ip_forward = 1                       # Change this to 1 if you are running a VPN server or client 
+net.ipv4.ip_forward_update_priority = 1
+net.ipv4.ip_forward_use_pmtu = 0
+net.ipv6.conf.all.forwarding = 0              # Change this to 1 if you are running a VPN server or client 
+net.ipv6.conf.all.mc_forwarding = 0
+net.ipv6.conf.default.forwarding = 0
+net.ipv6.conf.default.mc_forwarding = 0
+net.ipv6.conf.docker0.forwarding = 0
+net.ipv6.conf.docker0.mc_forwarding = 0
+net.ipv6.conf.eth0.forwarding = 0
+net.ipv6.conf.eth0.mc_forwarding = 0
+net.ipv6.conf.eth1.forwarding = 0
+net.ipv6.conf.eth1.mc_forwarding = 0
+net.ipv6.conf.lo.forwarding = 0
+net.ipv6.conf.lo.mc_forwarding = 0
+net.ipv6.conf.tun0.forwarding = 0
+net.ipv6.conf.tun0.mc_forwarding = 0
+
+sysctl net.ipv4.ip_forward=1
+sysctl net.ipv6.conf.all.forwarding=1
+
+# SO FAR THESE 2 COMMANDS WILL ALLOW ROUTING BETWEEN INTERFACES
+# ITS BEST TO 'HIDE' YOUR BOX AND NOT REPLY TO ICMP VIA THE PUBLIC INTERFACES
+
+sysctl  -a | grep icmp
+net.ipv4.icmp_echo_enable_probe = 0
+net.ipv4.icmp_echo_ignore_all = 1
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_errors_use_inbound_ifaddr = 0
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.icmp_msgs_burst = 50
+net.ipv4.icmp_msgs_per_sec = 1000
+net.ipv4.icmp_ratelimit = 1000
+net.ipv4.icmp_ratemask = 6168
+net.ipv6.icmp.echo_ignore_all = 1
+net.ipv6.icmp.echo_ignore_anycast = 0
+net.ipv6.icmp.echo_ignore_multicast = 0
+net.ipv6.icmp.error_anycast_as_unicast = 0
+net.ipv6.icmp.ratelimit = 1000
+net.ipv6.icmp.ratemask = 0-1,3-127
+net.netfilter.nf_conntrack_icmp_timeout = 30
+net.netfilter.nf_conntrack_icmpv6_timeout = 30
+
+
+sysctl net.ipv4.icmp_echo_ignore_all=1
+sysctl net.ipv6.icmp.echo_ignore_all=1
+
+To get these changes to persis accross reboots:
+
+bash# sysctl -p
+
+
+
+
