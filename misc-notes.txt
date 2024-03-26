@@ -1,0 +1,52 @@
+ 🖥  
+ PUT Method: 
+ PUT method, which is designed to upload data and replace whatever currently exists
+ at the target URL with it. Unlike GET and POST, PUT is idempotent, meaning that
+ multiple identical requests should have the same effect as a single one. 
+ This characteristic is crucial for understanding its impact on security.
+
+2. Vulnerabilities Associated with PUT:
+Explain that the PUT method can be exploited in ways similar to GET and POST when
+the application does not properly validate or restrict incoming data. However, because PUT is intended for uploading or updating content, it can lead to different security implications, such as unauthorized file upload, modification of existing files, or even code execution on the server if the uploaded files are executable or parsed by the server.
+4. Practical Demonstration:
+Lab Setup: Ensure your lab environment is configured to allow PUT requests and demonstrate how a vulnerable application might handle such requests. Use tools like Dalfox, as mentioned, to identify potential injection points.
+
+Dalfox and PUT Method: Discuss the output you provided:
+
+Method - PUT: This specifies that Dalfox is testing for vulnerabilities using the HTTP PUT method.
+Worker, BAV, Mining, etc.: These parameters control how Dalfox operates, such as the number of concurrent workers, blind XSS testing, pattern mining, and DOM-based XSS testing.
+Finding Injection Points with PUT: Highlight how Dalfox identifies injection points specifically through the PUT method. This is significant because traditional XSS or SQL injection points might not always be exposed through GET or POST methods.
+4. Exploiting PUT Vulnerabilities:
+Experimentation: Guide your students through crafting and sending PUT requests to the vulnerable endpoints identified. Use tools like curl or Postman for manual testing or write custom scripts that automate the PUT request with malicious payloads.
+
+Analyzing Results: Discuss the potential outcomes of successful exploitation, such as unauthorized content upload, modification, or execution. Compare these impacts with those of GET/POST vulnerabilities to highlight the unique risks associated with PUT requests.
+
+5. Mitigation Strategies:
+Stress the importance of proper input validation, the principle of least privilege, and why methods like PUT and DELETE should be tightly controlled or disabled if not needed. Discuss the role of web application firewalls (WAFs) and secure coding practices in preventing such vulnerabilities.
+Worker                 100
+ 🔦  BAV                    true
+ ⛏   Mining                 true (Gf-Patterns)
+ 🔬  Mining-DOM             true (mining from DOM)
+ ⏱   Timeout                10
+ 📤  FollowRedirect         true
+ 🕰   Started at             2024-03-26 08:54:18.065009 -0400 EDT m=+0.002634662
+
+. These two requests resulted in different responses, indicating that the input is being incorporated into a SQL query in an unsafe way.  Note that automated difference-based tests for SQL injection flaws can often be unreliable and are prone to false positive results. You should manually review the reported requests and responses to confirm whether a vulnerability is actually present.  
+Issue background
+SQL injection vulnerabilities arise when user-controllable data is incorporated into database SQL queries in an unsafe manner. An attacker can supply crafted input to break out of the data context in which their input appears and interfere with the structure of the surrounding query.
+A wide range of damaging attacks can often be delivered via SQL injection, including reading or modifying critical application data, interfering with application logic, escalating privileges within the database and taking control of the database server.
+Issue remediation
+The most effective way to prevent SQL injection attacks is to use parameterized queries (also known as prepared statements) for all database access. This method uses two steps to incorporate potentially tainted data into SQL queries: first, the application specifies the structure of the query, leaving placeholders for each item of user input; second, the application specifies the contents of each placeholder. Because the structure of the query has already been defined in the first step, it is not possible for malformed data in the second step to interfere with the query structure. You should review the documentation for your database and application platform to determine the appropriate APIs which you can use to perform parameterized queries. It is strongly recommended that you parameterize every variable data item that is incorporated into database queries, even if it is not obviously tainted, to prevent oversights occurring and avoid vulnerabilities being introduced by changes elsewhere within the code base of the application.
+You should be aware that some commonly employed and recommended mitigations for SQL injection vulnerabilities are not always effective:
+One common defense is to double up any single quotation marks appearing within user input before incorporating that input into a SQL query. This defense is designed to prevent malformed data from terminating the string into which it is inserted. However, if the data being incorporated into queries is numeric, then the defense may fail, because numeric data may not be encapsulated within quotes, in which case only a space is required to break out of the data context and interfere with the query. Further, in second-order SQL injection attacks, data that has been safely escaped when initially inserted into the database is subsequently read from the database and then passed back to it again. Quotation marks that have been doubled up initially will return to their original form when the data is reused, allowing the defense to be bypassed.
+Another often cited defense is to use stored procedures for database access. While stored procedures can provide security benefits, they are not guaranteed to prevent SQL injection attacks. The same kinds of vulnerabilities that arise within standard dynamic SQL queries can arise if any SQL is dynamically constructed within stored procedures. Further, even if the procedure is sound, SQL injection can arise if the procedure is invoked in an unsafe manner using user-controllable data.
+References
+Web Security Academy: SQL injection
+Using Burp to Test for Injection Flaws
+Web Security Academy: SQL Injection Cheat Sheet
+Vulnerability classifications
+CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
+CWE-94: Improper Control of Generation of Code ('Code Injection')
+CWE-116: Improper Encoding or Escaping of Output
+CAPEC-66: SQL Injection
+
