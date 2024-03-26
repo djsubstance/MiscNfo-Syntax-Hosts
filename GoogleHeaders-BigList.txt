@@ -1,4 +1,18 @@
-# These are Google specific headers i have compiled a list of:
+
+
+ ░▒▓██████▓▒░  ░▒▓██████▓▒░  ░▒▓██████▓▒░  ░▒▓██████▓▒░░ ▒▓█▓▒░       ░▒▓████████▓▒░                    
+░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░                           
+░▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░      ░ ▒▓█▓▒░       ░▒▓█▓▒░                           
+░▒▓█▓▒▒▓███▓▒ ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒▒▓███▓▒░ ▒▓█▓▒░       ░▒▓██████▓▒░                      
+░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░                           
+░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░░▒▓█▓▒░ ▒▓█▓▒░       ░▒▓█▓▒░                           
+ ░▒▓██████▓▒░  ░▒▓██████▓▒░  ░▒▓██████▓▒░  ░▒▓██████▓▒░░ ▒▓████████▓▒ ░▒▓████████▓▒░                    
+
+                           [ Specific Google Headers ]
+                 [ All Context of the headers and usage is unknown ]
+                    
+# Some of the headers are typical, so dont bother mentioning it, these are all specific to what I have seen on Google
+# These are [mostly] Google specific headers i have compiled a list of:
 
 Accept
 Accept-Language
@@ -170,3 +184,6 @@ x-foyer-client-environment
 X-Goog-First-Party-Reauth
 X-Server-Token
 x-rfui-request-context
+
+
+
