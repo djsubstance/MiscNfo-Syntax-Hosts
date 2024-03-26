@@ -1,0 +1,79 @@
+
+░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░▒▓███████▓▒░                                       
+░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░                                      
+░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░                                      
+░▒▓████████▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓███████▓▒░                                       
+░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░                                             
+░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░                                             
+░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░      ░▒▓█▓▒░   ░▒▓█▓▒░                                             
+                                                                                           
+                                                                                           
+ ░▒▓██████▓▒░  ░▒▓██████▓▒░ ░▒▓███████▓▒░░ ▒▓███████▓▒░░ ▒▓████████▓ ▒░▒▓██████▓▒  ░▒▓████████▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▒░   ░▒▓█▓▒░     
+░▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░     
+░▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓██████▓▒░ ░▒▓█▓▒░         ░▒▓█▓▒░     
+░▒▓█▓▒░       ░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░     
+░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░░▒▓█▓▒ ░▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░     
+ ░▒▓██████▓▒░  ░▒▓██████▓▒░ ░▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓█▓▒░ ▒▓████████▓ ▒░▒▓██████▓▒_░  ░▒▓█▓▒░     
+
+                            [ CURL COMMAND LINE CONNECT OPTIONS ]
+
+                                                                                           
+To provide clarity on using curl with the CONNECT method for educational purposes, especially in a lab setting where 
+using CURL to create HTTP tunnels for proxying, it's important to remember that the curl command structure given might
+not directly accomplish what's expected in a traditional sense (i.e., retrieving content via a proxy using the CONNECT method).
+The CONNECT method is primarily used for establishing a tunnel through a proxy, particularly for SSL/TLS traffic, and
+not for fetching data as a GET request would.
+
+However, for the sake of demonstrating various curl command constructions to attempt this with different proxies and 
+conditions, here are 10 hypothetical examples. Note that in practice, the effectiveness and behavior of these commands 
+will depend significantly on the configuration and permissions of the proxy servers you're using as well as the target URLs.
+
+These examples will follow the template you provided but will vary the proxy server and add some additional curl 
+options for educational variety. The $url variable should be replaced with the proxy server address, and additional
+proxy details are provided via the --proxy option. The goal here would be to understand how curl's CONNECT method 
+functions with different proxy settings, not necessarily to retrieve content from https://ifconfig.co directly.
+
+getmyip="https://ifconfig.me" || getmyip="https://ifconfig.co"
+
+Example 1: Basic Proxy Connection
+curl -sLI --proxy proxy1.example.com:8080 --user-agent 'Mozilla' -X CONNECT https://ifconfig.co
+
+Example 2: Proxy with Authentication
+curl -sLI --proxy proxy2.example.com:8080 --proxy-user username:password --user-agent 'Mozilla' -X CONNECT https://ifconfig.co
+
+Example 3: Verbose Output
+curl -vLI --proxy proxy3.example.com:8080 --user-agent 'Mozilla' -X CONNECT https://ifconfig.co
+
+Example 4: Using SOCKS5 Proxy
+curl -sLI --socks5 proxy4.example.com:1080 --user-agent 'Mozilla' -X CONNECT https://ifconfig.co
+
+Example 5: Specifying a Header
+curl -sLI --proxy proxy5.example.com:8080 --user-agent 'Mozilla' -X CONNECT -H "Custom-Header: Value" https://ifconfig.co
+
+Example 6: Proxy over HTTPS
+curl -sLI --proxy https://proxy6.example.com:443 --user-agent 'Mozilla' -X CONNECT https://ifconfig.co
+
+Example 7: Using a Different User-Agent
+curl -sLI --proxy proxy7.example.com:8080 --user-agent 'Googlebot' -X CONNECT https://ifconfig.co
+
+Example 8: Proxy with No Keep-Alive
+
+curl -sLI --proxy proxy8.example.com:8080 --user-agent 'Mozilla' -X CONNECT -H "Connection: close" https://ifconfig.co
+Example 9: Using HTTP/2
+
+curl -sLI --proxy proxy9.example.com:8080 --user-agent 'Mozilla' -X CONNECT --http2 https://ifconfig.co
+Example 10: Ignoring SSL Certificate Errors (Use with Caution)
+
+curl -sLI --proxy proxy10.example.com:8080 --user-agent 'Mozilla' -X CONNECT --insecure https://ifconfig.co
+
+[*] Key Points to Remember:
+
+The actual result might not be the content of https://ifconfig.co because CONNECT is used for tunneling, not content retrieval.
+The effectiveness and response from using the CONNECT method in this way will heavily depend on the configuration of the proxy servers
+and the permissions set by network administrators.
+
+--- Tip:
+Remember to use options to get potentially working command by *always* setting --user-agent 'Kona' (kona = WAF it seems to help)
+Verify whats going on with -I (show headers)
+
