@@ -1,0 +1,61 @@
+# Enumerated via Cloudflare directly on Apr 1 2024 100% valid as of now
+
+;;
+;; Domain:     bugcrowd.com.
+;; Exported:   2024-04-01 13:28:15
+bugcrowd.com	3600	IN	SOA	journey.ns.cloudflare.com. dns.cloudflare.com. 2046364469 10000 2400 604800 3600
+
+;; NS Records
+bugcrowd.com.	86400	IN	NS	journey.ns.cloudflare.com.
+bugcrowd.com.	86400	IN	NS	leland.ns.cloudflare.com.
+
+;; A Records
+bugcrowd.com.	1	IN	A	151.101.194.132
+bugcrowd.com.	1	IN	A	151.101.130.132
+bugcrowd.com.	1	IN	A	151.101.66.132
+bugcrowd.com.	1	IN	A	151.101.2.132
+forum.bugcrowd.com.	1	IN	A	151.101.194.132
+forum.bugcrowd.com.	1	IN	A	151.101.130.132
+forum.bugcrowd.com.	1	IN	A	151.101.66.132
+forum.bugcrowd.com.	1	IN	A	151.101.2.132
+
+;; CNAME Records
+_acme-challenge.bugcrowd.com.	1	IN	CNAME	iknecuc0qumgsk9chn.fastly-validations.com.
+api.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+blog.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+dd.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+docs.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+files.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+go.bugcrowd.com.	1	IN	CNAME	mkto-ab270028.com.
+intercom._domainkey.bugcrowd.com.	1	IN	CNAME	3ccb1d48-b20e-442c-af6a-945eb36caa19.dkim.intercom.io.
+pages.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+s1._domainkey.bugcrowd.com.	1	IN	CNAME	s1.domainkey.u5511678.wl179.sendgrid.net.
+s2._domainkey.bugcrowd.com.	1	IN	CNAME	s2.domainkey.u5511678.wl179.sendgrid.net.
+www.bugcrowd.com.	1	IN	CNAME	j.sni.global.fastly.net.
+
+;; MX Records
+bounce.bugcrowd.com.	1	IN	MX	1 bounce.bugcrowd.com.
+bugcrowd.com.	1	IN	MX	10 alt4.aspmx.l.google.com.
+bugcrowd.com.	1	IN	MX	10 alt3.aspmx.l.google.com.
+bugcrowd.com.	1	IN	MX	5 alt2.aspmx.l.google.com.
+bugcrowd.com.	1	IN	MX	5 alt1.aspmx.l.google.com.
+bugcrowd.com.	1	IN	MX	1 aspmx.l.google.com.
+support.bugcrowd.com.	1	IN	MX	10 feedback-smtp.us-east-1.amazonses.com.
+
+;; TXT Records
+_amazonses.bugcrowd.com.	1	IN	TXT	"brZdCwJt8EbN3Z72E9DkGUVp+2E0oqbZCky0laSND+4="
+bounce.bugcrowd.com.	1	IN	TXT	"v=spf1 include:mktomail.com -all"
+bugcrowd.com.	1	IN	TXT	"google-site-verification=mF9Mvnmcf3NuIHYKPRKAzWF3lrWNczY_YIkSTDg3FOk"
+bugcrowd.com.	1	IN	TXT	"logmein-verification-code=6af8fa3b-aa61-4933-9990-496dc799dc21"
+bugcrowd.com.	1	IN	TXT	"twilio-domain-verification=eea67cadd44cb508bcbd67be86e2aa74"
+bugcrowd.com.	1	IN	TXT	"fastly-domain-delegation-ddmc453781-453781-2021-12-14"
+bugcrowd.com.	1	IN	TXT	"apple-domain-verification=HTp26NWCG6qqHI8o"
+bugcrowd.com.	1	IN	TXT	"ZOOM_verify_7ot2EXhFeAuW4ZgjhyUDtG"
+bugcrowd.com.	1	IN	TXT	"MS=ms55980092"
+bugcrowd.com.	1	IN	TXT	"D480DD4EEF"
+_dmarc.bugcrowd.com.	1	IN	TXT	"v=DMARC1; p=reject; sp=reject; fo=1; ri=3600; rua=mailto:skj1t5t8@ag.us.dmarcian.com, mailto:bwf6dobg@ag.dmarcian.com; ruf=mailto:skj1t5t8@fr.us.dmarcian.com"
+_dnsauth.bugcrowd.com.	1	IN	TXT	"d7phmphvg351t7l4g6sx9bs5434xf9vf"
+google._domainkey.bugcrowd.com.	1	IN	TXT	"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk4DeXZrGeFhDnUDsYh+zP8JEEPN68z+2FODhU1/jpySEzoE4Hp1i0Ri+QEpCp71qC2zRCIe0wQO/vtYp3r3+YyWh+B30DDLniaUh52tQQkegpw7+651upS4HA0aQ7NqIwOXoSmXCjE1Myh/Qg5WudLmRX90jLYvJH7jUdDe/sBYuy1gYMmWuI72S/wNE1/QVU" "z6C6923Dl5mkaKUPm84ZZ1YNBtnk3LAoFbNck1Ti9cqZ4C0AT0rBHr6EW9bGTrI5sN+xpThQ3w4W/Ni3Z5DsQ03d6b+N+GED4VYwXxzJcVhcIzS7CK+k+UcRqW9hz2MMenwc1LrTPB1P3EU3Ii66wIDAQAB"
+krs._domainkey.bugcrowd.com.	1	IN	TXT	"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDRHXxN8cO2X7i/rZJeNStXBv2dsWq47TWh3UMrGGluKMGtvSTwwprDpensNuBlxsKpstR3gPW7M0d7Re63nOuKsKRnO8B5we7kIcA3DvWdYVXKVY85zgnEOZ5qh3jWPuobITqlXxDMquIqN/rAV4zqazSbz+spc4lFUMW3CeQ9hwIDAQAB"
+smtpapi._domainkey.bugcrowd.com.	1	IN	TXT	"k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPtW5iwpXVPiH5FzJ7Nrl8USzuY9zqqzjE0D1r04xDN6qwziDnmgcFNNfMewVKN2D1O+2J9N14hRprzByFwfQW76yojh54Xu3uSbQ3JP0A7k8o8GutRF8zbFUA8n0ZH2y0cIEjMliXY4W4LwPA7m4q0ObmvSjhd63O9d8z1XkUBwIDAQAB"
+support.bugcrowd.com.	1	IN	TXT	"v=spf1 include:amazonses.com -all"
