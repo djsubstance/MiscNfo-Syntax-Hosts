@@ -1,0 +1,123 @@
+# Understanding Javascript request chains and prototypes
+# author: substance
+# date: 04/02/24
+------
+
+   __                                 _       _   
+   \ \  __ ___   ____ _ ___  ___ _ __(_)_ __ | |_ 
+    \ \/ _` \ \ / / _` / __|/ __| '__| | '_ \| __|
+ /\_/ / (_| |\ V / (_| \__ \ (__| |  | | |_) | |_ 
+ \___/ \__,_| \_/ \__,_|___/\___|_|  |_| .__/ \__|
+                                       |_|        
+   ___ _           _                              
+  / __\ |__   __ _(_)_ __  ___                    
+ / /  | '_ \ / _` | | '_ \/ __|                   
+/ /___| | | | (_| | | | | \__ \                   
+\____/|_| |_|\__,_|_|_| |_|___/                   
+                                                  
+------
+Using this JS from a google js script, I noticed the word:
+ [*] Transpile
+ and noticed [*] $variables in JS (hadnt seen it)
+-----
+Code Snip: from Google's scripts:
+    if (f.global.$gwtExport && f.global.$gwtExport.$jscomp && !f.global.$gwtExport.$jscomp.transpile)
+                    throw Error('The transpiler did not properly export the "transpile" method. $gwtExport: ' + JSON.stringify(f.global.$gwtExport));
+                f.global.$jscomp.transpile = f.global.$gwtExport.$jscomp.transpile;
+                d = f.global.$jscomp;
+                g = d.transpile
+            } i am new to JS .. i understand transpiling is converting TS -> JS? when does JS use $vqriables?
+
+-- Examination:
+This is is checking for the presence of a specific transpile method within a global object and throws an error if it's not found, then assigns this method to a variable for later use. Let's break it down step-by-step:
+
+Checking for the transpile method:
+if (f.global.$gwtExport && f.global.$gwtExport.$jscomp && !f.global.$gwtExport.$jscomp.transpile)
+    throw Error('The transpiler did not properly export the "transpile" method. $gwtExport: ' + JSON.stringify(f.global.$gwtExport));
+
+In this part of the code:
+f.global.$gwtExport: It checks if the $gwtExport object exists on the global scope of f.
+f.global.$gwtExport.$jscomp: It further checks if the $jscomp object exists inside $gwtExport.
+!f.global.$gwtExport.$jscomp.transpile: It checks if the transpile method does not exist in the $jscomp object.
+If all these conditions are true, it throws an error, indicating that the transpile method wasn't properly exported.
+
+Assigning the transpile method:
+f.global.$jscomp.transpile = f.global.$gwtExport.$jscomp.transpile;
+This line assigns the transpile method from $gwtExport.$jscomp to $jscomp on the global scope of f.
+
+Setting local variables:
+d = f.global.$jscomp;
+g = d.transpile;
+
+Here, the global $jscomp object is assigned to a local variable d, and then its transpile method is assigned to another local variable g for later use.
+
+Transpiling: transpiling is more broadly the process of converting source code from one programming language to another, which can include converting TypeScript to JavaScript, but also encompasses other transformations, like ES6 JavaScript to ES5 JavaScript to ensure compatibility with older browsers.
+
+Usage of $ in variables: In JavaScript, $ is a valid character in variable names and is often used in certain naming conventions. It doesn’t have a specific meaning like in other languages (e.g., PHP where it denotes a variable). In the context of your code, $ seems to be used as part of the naming convention for objects and properties related to the transpilation process. The use of $ is not standard and is likely specific to the codebase or framework you are looking at (like Google Web Toolkit - GWT).
+
+List all properties of an object’s prototype:
+console.log(Object.getOwnPropertyNames(Object.prototype));
+
+Add a new method to an array’s prototype:
+Array.prototype.first = function() { return this[0]; };
+
+Check if a property exists in the prototype of an object:
+console.log('toString' in Object.prototype);
+
+Find the prototype of a specific object:
+console.log(Object.getPrototypeOf({}));
+
+Override an existing method in String’s prototype:
+String.prototype.toUpperCase = function() { return 'Overridden!'; };
+
+Delete a custom method from an object’s prototype (not standard built-in methods):
+delete Array.prototype.first;
+
+Inspect the prototype chain of an object:
+let obj = {}; while (obj) { console.log(obj); obj = Object.getPrototypeOf(obj); }
+
+Add a property to the Object prototype and see it in action:
+Object.prototype.customProp = 'Hello, World!'; console.log({}.customProp);
+
+Check the constructor of an object through its prototype:
+console.log(({}).constructor.name);
+
+Use a prototype method directly from the prototype object:
+console.log(Object.prototype.hasOwnProperty.call({foo: 'bar'}, 'foo'));
+
+
+These one-liners should help you interact with and learn more about prototypes in JavaScript. Remember that modifying built-in object prototypes is generally frowned upon in production code because it can lead to unpredictable behavior and conflicts, especially in larger codebases or when working with external libraries.
+
+how to add a property to the global Object prototype:
+Object.prototype.isPolluted = true;
+
+Demonstrate the effect of prototype pollution on all objects:
+console.log({}.isPolluted); // Every object will now have isPolluted property set to true
+
+Illustrate how prototype pollution can change the behavior of all arrays:
+Array.prototype.pop = () => 'Polluted!';
+
+
+Show an object’s prototype to see if it has been polluted:
+console.log(Object.getPrototypeOf({}));
+
+Demonstrate how to check for unexpected enumerable properties (potential pollution):
+for (let prop in {}) { if ({}.hasOwnProperty(prop)) { console.log('Found unexpected property:', prop); } }
+
+Inject a malicious function into the prototype chain:
+Object.prototype.exec = () => { console.log('Executed a malicious function!'); };
+
+Demonstrate how prototype pollution can lead to unexpected results in common operations:
+console.log('length' in []); // Should be false, but if polluted, it might return true
+
+Show the risk of assigning untrusted input to an object directly (potential pollution source):
+const userInput = JSON.parse('{"__proto__": {"secret": "leaked"}}'); Object.assign({}, userInput);
+
+Evaluate the effect of polluted prototypes on instanceof checks:
+console.log({} instanceof Object); // Pollution can alter the prototype chain and affect this result
+
+Clean up a polluted prototype (demonstrating the need for awareness and corrective actions):
+delete Object.prototype.isPolluted;
+
+These one-liners can help illustrate the nature of prototype pollution, how easily it can occur, the broad impact it can have on an application, and the importance of vigilance in preventing it. When teaching, emphasize that modifying object prototypes, especially the Object prototype, is dangerous and should be avoided in production code to prevent security vulnerabilities like prototype pollution.
+
