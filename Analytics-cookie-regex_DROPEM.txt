@@ -1,0 +1,209 @@
+-----------------------===================:::::::::::::::: [ one nation:underground ] :::::::::::=============----------------------=
+[*] Filename: Analytics-cookie-regex_DROPEM.txt
+[*] Description: Around 50 of the most common tracking/analytics header/cookie names in regex format
+[*] Why: If you are pentesting a target (esp w/o permission) - you want to do everything in your power to NOT raise alarms
+         If you have any experience with using automated scanners you already know its a careful balance between not taking 3 years
+         and not alerting the security team of your efforts.  This came to mind while I was using Burp recently, evaluating paypal.com,
+         they were adding 5-7 key/value pairs and I realized after doing some quick math, that every single time I made a single request 
+         to the target I was sending plenty of data about my (i would imagine very odd / obvious) hacking attempts to Bing, Google Tag mgr, 
+         and Yandex analytics.  Each of the values were at least 2-4 bytes, in addition to making my painfully obvious to the digital marketing 
+         team, it was def. making my presense known, and this idea came to mind.  Im sure its not unique, but I have never seen such a badass 
+         list.  These are ready to drop into Burp Suite - under Proxy / Settings / Match / Replace
+[*] HOWTO: Take the raw list of regex payloads and save it to fuqtracking.txt  - then import it into match replace (make sure you put it in the drop
+        cookie section.  Since the remote server actaully defines and sets this tag and communuicates with these servers all we can do is try to 
+        prevent it, or minimize what data gets sent .  I also add 0.0.0.0 google-analytics.com  , etc etc etc to my /etc/hosts file
+[*] Created by: substance
+[*] Created on: 4/4/24
+[*] Last Mod: 4/4/24
+[*] contact: nah
+[*] affils: 9x
+
+:: substance brings you a extremely comphrehensive list of spot on accurate regex's to match (and hopefully drop analytics headers in burp ::
+
+-----------------------===================:::::::::::::::: [ one nation:underground ] :::::::::::=============----------------------
+                                                                                        
+                  .-''-.                                                                
+                 //'` `\|                                                               
+     _.._       '/'    '|                                                               
+   .' .._|     |'      '|                                                               
+   | '         ||     /||                                                               
+ __| |__  _    _\'. .'/||                                                               
+|__   __|| '  / |`--'` ||                                                               
+   | |  .' | .' |      ||                                                               
+   | |  /  | /  |      || />                                                            
+   | | |   `'.  |      ||//                                                             
+   | | '   .'|  '/     |'/                                          _..._               
+   |_|  `-'  `--'      |/      .---.                             .-'_..._''.            
+             _..._             |   |                     .--.  .' .'      '.\           
+           .'     '.           |   |.-.          .-      |__| / .'                      
+          .   .-.   .          |   | \ \        / /  .|  .--.. '                        
+    __    |  '   '  |    __    |   |  \ \      / / .' |_ |  || |                        
+ .:--.'.  |  |   |  | .:--.'.  |   |   \ \    / /.'     ||  || |                   _    
+/ |   \ | |  |   |  |/ |   \ | |   |    \ \  / /'--.  .-'|  |. '                 .' |   
+`" __ | | |  |   |  |`" __ | | |   |     \ `  /    |  |  |  | \ '.          .   .   | / 
+ .'.''| | |  |   |  | .'.''| | |   |      \  /     |  |  |__|  '. `._____.-'/ .'.'| |// 
+/ /   | |_|  |   |  |/ /   | |_'---'      / /      |  '.'        `-.______ /.'.'.-'  /  
+\ \._,\ '/|  |   |  |\ \._,\ '/       |`-' /       |   /                  ` .'   \_.'   
+ `--'  `" '--'   '--' `--'  `"         '..'        `'-'                                 
+
+
+-----------------------===================:::::::::::::::: [ HACK TEH PLANET OR DIE TRYING ] :::::::::::=============----------------------
+
+
+The best list of regular expressions (regex) for matching and potentially blocking cookies tracking and analytics based on cookie names. These regex patterns can be imported into Burp Suite for its matching rules to drop or manipulate requests containing these cookies. 
+
+Key:
+[-] Questionable, maybe avoid it it might not be analytics
+
+__gsas
+Regex: __gsas=.*?;
+
+__gpi
+Regex: __gpi=.*?;
+
+__gpi_optout
+Regex: __gpi_optout=.*?;
+
+NID
+Regex: NID=.*?;
+
+DSID
+Regex: DSID=.*?;
+
+test_cookie
+Regex: test_cookie=.*?;
+
+[-] id
+Regex: id=.*?;
+
+__gads
+Regex: __gads=.*?;
+
+GED_PLAYLIST_ACTIVITY
+Regex: GED_PLAYLIST_ACTIVITY=.*?;
+
+'ACLK_DATA
+Regex: ACLK_DATA=.*?;
+
+m_sess
+Regex: pm_sess=.*?;
+
+pm_sess_NNN
+Regex: pm_sess_NNN=.*?;
+
+aboutads_sessNNN
+Regex: aboutads_sessNNN=.*?;
+
+FPAU
+Regex: FPAU=.*?;
+
+ANID
+Regex: ANID=.*?;
+
+AID
+Regex: AID=.*?;
+
+IDE
+Regex: IDE=.*?;
+
+TAID
+Regex: TAID=.*?;
+
+FPGCLDC
+Regex: FPGCLDC=.*?;
+
+_gcl_dc
+Regex: _gcl_dc=.*?;
+
+_gcl_au
+Regex: _gcl_au=.*?;
+
+FLC
+Regex: FLC=.*?;
+
+RUL
+Regex: RUL=.*?;
+
+FCCDCF
+Regex: FCCDCF=.*?;
+
+FCNEC
+Regex: FCNEC=.*?;
+
+FPGCLAW
+Regex: FPGCLAW=.*?;
+
+FPGCLGB
+Regex: FPGCLGB=.*?;
+
+_gcl_gb
+Regex: _gcl_gb=.*?;
+
+gac_gb<wpid>
+Regex: _gac_gb_.*?=.*?;
+
+_gcl_aw
+Regex: _gcl_aw=.*?;
+
+1P_JAR
+Regex: 1P_JAR=.*?;
+
+Conversion
+Regex: Conversion=.*?;
+
+YSC
+Regex: YSC=.*?;
+
+VISITOR_INFO1_LIVE
+Regex: VISITOR_INFO1_LIVE=.*?;
+
+_ga
+Regex: _ga=.*?;
+
+_gid
+Regex: _gid=.*?;
+
+gat[<customname>]
+Regex: _gat_.*?=.*?;
+
+__utma
+Regex: __utma=.*?;
+
+__utmb
+Regex: __utmb=.*?;
+
+__utmc
+Regex: __utmc=.*?;
+
+__utmt
+Regex: __utmt=.*?;
+
+__utmz
+Regex: __utmz=.*?;
+
+__utmv
+Regex: __utmv=.*?;
+
+AMP_TOKEN
+Regex: AMP_TOKEN=.*?;
+
+FPID
+Regex: FPID=.*?;
+
+GA_OPT_OUT
+Regex: GA_OPT_OUT=.*?;
+
+ga<wpid>
+Regex: _ga_.*?=.*?;
+
+dc_gtm<property-id>
+Regex: _dc_gtm_.*?=.*?;
+
+_gaexp
+Regex: _gaexp=.*?;
+
+_gaexp_rc
+Regex: _gaexp_rc=.*?;
+
+Each regex pattern follows the format of cookie_name=.*?;, which matches the cookie name followed by any content until the next semicolon (;),
+denoting the end of the cookie value in the HTTP header.
