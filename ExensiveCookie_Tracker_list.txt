@@ -1,0 +1,96 @@
+Filename: ExtensiveCookie_Tracker_list.txt
+Desc: Nice list you can easily make regex's out of to drop in Burp or Zap (prior to making automated requests) which 
+      will minimize your footprint
+
+Valid Example:
+
+Scrolling down the list you will see the following 5 entries:
+"_opt_awcid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_awmid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_awgid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_awkid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_utmc","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+ ^^^^^ - we have 5 chars that do not change, we can write one Burp Regex to drop them.
+
+You want to match any cookie name that starts with _opt_. Here’s how you can construct such a regex:
+
+Valid Regex to match the 5 above:      _opt_aw[cgkmu]id
+
+Here’s how to apply it in Burp Suite for dropping requests: (burp)
+
+[*] Open Burp Suite and go to the Proxy tab.
+[*] Navigate to the Options sub-tab.
+[*] In the Match and Replace section, add a new rule.
+[*] For the type, choose Request header.
+[*] In the match section, insert your regex: _opt_aw[cgkmu]id
+[*]  can leave the replace section empty if you want to remove these cookies, or you can replace it with some specific value if needed.
+[*] Now effectively identify and manipulate HTTP requests containing the specified cookies. Ensure that the regex pattern correctly matches the cookie names in actual HTTP requests, as the specific formatting and context might require adjustments to the regex.
+
+Without further ado- here is the list so far - I know there are TONS more. Fork this and contribute if you can:
+
+"Cookie Name","Purpose(s)","Product(s)","Cookie Lifespan","Domain(s)"
+"__gsas","Advertising","AdSense for Search","3 months","Set from partner domain"
+"__gpi","Advertising","AdSense, Google Ad Manager","13 months","Set from partner domain"
+"__gpi_optout","Advertising","AdSense, Google Ad Manager","13 months","Set from partner domain"
+"NID","Security, Analytics, Functionality, Advertising","AdSense for Search, Google Ads","6 months","google.com and local variations, e.g. google.de"
+"DSID","Security, Functionality, Advertising","AdSense, Campaign Manager, Google Ad Manager, Google Analytics, Display & Video 360, Search Ads 360","2 weeks","doubleclick.net"
+"test_cookie","Functionality","AdSense, Campaign Manager, Google Ad Manager, Google Analytics, Display & Video 360, Search Ads 360","15 minutes","doubleclick.net"
+"id","Functionality, Advertising","AdSense, Campaign Manager, Display & Video 360, Google Ad Manager, Search Ads 360","OPT_OUT: fixed expiration (year 2030/11/09), non-OPT_OUT: 13 months EEA UK / 24 months elsewhere","doubleclick.net"
+"__gads","Advertising","AdSense, Display & Video 360, Google Ad Manager, Google Ads","13 months","Set from partner domain"
+"GED_PLAYLIST_ACTIVITY","Advertising","AdSense, Google Ad Manager, YouTube","Session","Set from partner domain"
+"ACLK_DATA","Advertising","AdSense, Google Ad Manager, YouTube","5 minutes","youtube.com"
+"pm_sess","Security, Functionality","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","30 minutes","doubleclick.net, google.com"
+"pm_sess_NNN","Security, Functionality","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","30 minutes","doubleclick.net, google.com"
+"aboutads_sessNNN","Security, Functionality","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","30 minutes","doubleclick.net, google.com"
+"FPAU","Analytics, Advertising","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","90 days","Set from partner domain"
+"ANID","Advertising","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","13 months EEA UK / 24 months elsewhere","google.com and local variations, e.g. google.de"
+"AID","Analytics, Advertising","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","13 months EEA UK / 540 days elsewhere","google.com/ads, google.com/ads/measurement, googleadservices.com"
+"IDE","Advertising","Campaign Manager, Display & Video 360, Google Ad Manager, Google Analytics, Search Ads 360","13 months EEA UK / 24 months elsewhere","doubleclick.net"
+"TAID","Analytics, Advertising","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","14 days","google.com/ads, google.com/ads/measurement, googleadservices.com"
+"FPGCLDC","Analytics, Advertising","Campaign Manager, Display & Video 360, Search Ads 360","90 days","Set from partner domain"
+"_gcl_dc","Analytics, Advertising","Campaign Manager, Display & Video 360, Search Ads 360","90 days","Set from partner domain"
+"_gcl_au","Analytics, Advertising","Campaign Manager, Display & Video 360, Google Ads, Search Ads 360","90 days","Set from partner domain"
+"FLC","Advertising","Campaign Manager, Display & Video 360, Search Ads 360","10 seconds","doubleclick.net"
+"RUL","Advertising","Display & Video 360, Google Ads","12 months","doubleclick.net"
+"FCCDCF","Functionality","Funding Choices","13 months","Set from partner domain"
+"FCNEC","Analytics","Funding Choices","365 days","Set from partner domain"
+"FPGCLAW","Analytics, Advertising","Google Ads","90 days","Set from partner domain"
+"FPGCLGB","Analytics, Advertising","Google Ads","90 days","Set from partner domain"
+"_gcl_gb","Analytics, Advertising","Google Ads","90 days","Set from partner domain"
+"_gac_gb_<wpid>","Analytics, Advertising","Google Ads","90 days","Set from partner domain"
+"_gcl_aw","Analytics, Advertising","Google Ads","90 days","Set from partner domain"
+"1P_JAR","Advertising","Google Ads","30 days","google.com and local variations, e.g. google.de"
+"Conversion","Advertising","Google Ads","90 days","www.googleadservices.com/pagead/conversion/"
+"YSC","Security","Google Ads, YouTube","Session","youtube.com"
+"VISITOR_INFO1_LIVE","Security, Advertising","Google Ads, YouTube","180 days","youtube.com"
+"VISITOR_INFO1_LIVE__k","Security, Advertising","Google Ads, YouTube","180 days","youtube.com"
+"VISITOR_INFO1_LIVE__default","Security, Advertising","Google Ads, YouTube","180 days","youtube.com"
+"FPLC","Analytics","Google Analytics","20 hours","Set from partner domain"
+"_ga","Analytics","Google Analytics","2 years","Set from partner domain"
+"_gac_<wpid>","Advertising","Google Analytics","90 days","Set from partner domain"
+"_gid","Analytics","Google Analytics","24 hours","Set from partner domain"
+"_gat[_<customname>]","Analytics","Google Analytics","1 minute","Set from partner domain"
+"__utma","Analytics","Google Analytics","2 years","Set from partner domain"
+"__utmb","Analytics","Google Analytics","30 minutes","Set from partner domain"
+"__utmc","Analytics","Google Analytics","Session","Set from partner domain"
+"__utmt","Analytics","Google Analytics","10 minutes","Set from partner domain"
+"__utmz","Analytics","Google Analytics","6 months","Set from partner domain"
+"__utmv","Analytics","Google Analytics","2 years","Set from partner domain"
+"AMP_TOKEN","Functionality","Google Analytics","30 seconds to 1 year","Set from partner domain"
+"FPID","Analytics","Google Analytics","2 years","Set from partner domain"
+"GA_OPT_OUT","Functionality","Google Analytics","10 Nov 2030 (all cookies)","google-analytics.com"
+"_ga_<wpid>","Analytics","Google Analytics 360","2 years","Set from partner domain"
+"_dc_gtm_<property-id>","Analytics","Google Analytics, Google Tag Manager","1 minute","Set from partner domain"
+"_gaexp","Analytics","Google Analytics, Optimize","Set by customer; max of 93 days","Set from partner domain"
+"_gaexp_rc","Analytics","Google Analytics, Optimize","10 seconds","Set from partner domain"
+"_opt_awcid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_awmid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_awgid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_awkid","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_opt_utmc","Analytics","Google Analytics, Optimize","24 hours","Set from partner domain"
+"_gcl_gf","Analytics, Advertising","Google Flights","90 days","Set from partner domain"
+"_gcl_ha","Analytics, Advertising","Google Hotel Ads","90 days","Set from partner domain"
+"PAIDCONTENT","Analytics, Advertising","Google Surveys","30 days","doubleclick.net"
+"_opt_expid","Analytics","Optimize","10 seconds","Set from partner domain"
+"APC","Advertising, Security","Campaign Manager, Display & Video 360","6 months","doubleclick.net"
+
