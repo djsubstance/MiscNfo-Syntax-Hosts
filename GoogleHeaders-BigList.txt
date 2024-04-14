@@ -14,6 +14,17 @@
 # Some of the headers are typical, so dont bother mentioning it, these are all specific to what I have seen on Google
 # These are [mostly] Google specific headers i have compiled a list of:
 
+
+X-Goog-Api-Key"]=a.ka.apiKey,c["X-Goog-AuthUser"]="",c["X-Goog-FieldMask 
+Attribution-Reporting-Register-Trigger: {"aggregatable_deduplication_keys":[{"deduplication_key":"65001433"}],"aggregatable_trigger_data":[{"filters":{"6":["true"]},"key_piece":"0xa1da5abc23ff4cbd","source_keys":["1","5"]},{"filters":{"6":["false"],"7":["6500081433"]},"key_piece":"0x959ade595bc07005","source_keys":["1","5"]},{"filters":{"6":["false"]},"key_piece":"0xa1da5a23ff4cbd","not_filters":{"7":["6500081433"]},"source_keys":["1","5"]},{"filters":{"6":["true"]},"key_piece":"0x60236e38f991a4fd","source_keys":["2","3","4"]},{"filters":{"6":["false"],"7":["6500081433"]},"key_piece":"0x18c630]]bbf1070152","source_keys":["2","3","4"]},{"filters":{"6":["false"]},"key_piece":"0x60236e38f991a4fd","not_filters":{"7":["6500081433"]},"source_keys":["2","3","4"]}],"aggregatable_values":{"1":65,"2":65,"3":65,"4":6356},"debug_key":"713786700967287341","debug_reporting":true,"event_trigger_data":[{"deduplication_key":"6500081433","filters":{"6":["true"]},"not_filters":{"17":["135399288","135826203","135656061"]},"priority":"100","trigger_data":"0"},{"deduplication_key":"6500081433","filters":{"6":["false"],"7":["65\\00081433"]},"not_filters":{"17":["135399288","135826203","1356561"]},"priority":"200","trigger_data":"1"},{"deduplication_key":"6500081433","filters":{"6":["false"]},"not_filters":{"17":["135399288","135826203","135656061"],"7":["6500081433"]},"priority":"100","trigger_data":"0"},{"deduplication_key":"60081433","filters":{"17":["135399288"],"6":["true"]},"priority":"100","trigger_data":"6"},{"deduplication_key":"600081433","filters":{"17":["135399288"],"6":["false"],"7":["6500081433"]},"priority":"200","trigger_data":"1"},{"deduplication_key":"6500081433","filters":{"17":["135399288"],"6":["false"]},"not_filters":{"7":["6500081433"]},"priority":"100","trigger_data":"6"},{"deduplication_key":"6500081433","filters":{"17":["135826203"],"6":["true"]},"priority":"100","trigger_data":"6"},{"deduplication_key":"6500081433","filters":{"17":["135826203"],"6":["false"],"7":["6500081433"]},"priority":"200","trigger_data":"1"},{"deduplication_key":"6500081433","filters":{"17":["135826203"],"6":["false"]},"not_filters":{"7":["6500081433"]},"priority":"100","trigger_data":"6"},{"deduplication_key":"6500081433","filters":{"17":["135656061"],"6":["true"]},"priority":"100","trigger_data":"6"},{"deduplication_key":"6500081433","filters":{"17":["135656061"],"6":["false"],"7":["6500081433"]},"priority":"200","trigger_data":"1"},{"deduplication_key":"6500081433","filters":{"17":["135656061"],"6":["false"]},"not_filters":{"7":["6500081433"]},"priority":"100","trigger_data":"6"}],"filters":{"2":["10836211492"],"3":["03-29","03-28","03-27","03-26","03-25","03-24","03-23","03-22","03-21","03-20","03-19","03-18","03-17","03-16","03-15","03-14","03-13","03-12","03-11","03-10","03-09","03-08","03-07","03-06","03-05","03-04","03-03","03-02","03-01","02-29"],"4":["03-29"],"5":["03-29","03-28","03-27","03-26"]}}
+Access-Control-Expose-Headers: Attribution-Reporting-Register-Trigger
+X-Content-Type-Options: nosniff
+Content-Disposition: attachment; filename="f.txt"
+Server: cafe
+
+
+
+
 Accept
 Accept-Language
 Authorization
