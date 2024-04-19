@@ -1,0 +1,79 @@
+SQL Injection
+Example 1: Use different encoding to bypass filters and insert a union select query.
+Example 2: Encode malicious input to exploit a second-order SQL injection where the payload is stored and executed later.
+
+Cross-Site Scripting (XSS)
+Example 1: Encode a script tag in a way that bypasses input sanitization but is executed by the browser.
+Example 2: Use URL encoding to hide a JavaScript event handler (like onerror) in an image tag.
+
+Directory Traversal
+Example 1: Utilize dot-dot-slash sequences encoded in an unusual charset to traverse to root directories.
+Example 2: Encode slashes and directory names to bypass simplistic path filters.
+
+Command Injection
+Example 1: URL encode command injection payloads to bypass input validation.
+Example 2: Use hex encoding to hide system commands within benign-looking inputs.
+
+Email Header Injection
+Example 1: Use encoded carriage returns and line feeds to inject a CC field.
+Example 2: Encode an additional header to modify the email's subject or add attachments.
+
+HTTP Request Smuggling
+Example 1: Employ URL encoding to confuse the parser about the content length header.
+Example 2: Use mixed charsets to create discrepancies between front-end and back-end request parsing.
+
+HTTP Response Splitting
+Example 1: Encode newline characters to split responses and inject headers.
+Example 2: Use percent encoding to obfuscate the splitting payload.
+
+Template Injection
+Example 1: Encode curly braces to bypass filters against template syntax.
+Example 2: Use alternative charsets to inject template directives that execute code.
+
+File Upload Vulnerability
+Example 1: Change the encoding of the file extension to bypass upload filters.
+Example 2: Encode the payload in a file in a way that's executed upon rendering or processing.
+
+SSRF (Server-Side Request Forgery)
+Example 1: Encode the URL to bypass regex-based URL filters.
+Example 2: Use hex encoding to disguise the port number in the URL.
+
+XML External Entity (XXE) Injection
+Example 1: Utilize URL encoding to sneak XXE payloads past input sanitization.
+Example 2: Encode the DOCTYPE and ENTITY declarations to exploit XXE vulnerabilities.
+
+Buffer Overflow
+Example 1: Use overlong UTF-8 encoding to input more bytes than the application expects.
+Example 2: Exploit character encoding conversion functions that may not account for buffer sizes correctly.
+
+LDAP Injection
+Example 2: Use alternative charset encoding for LDAP syntax to bypass input validation.
+Example 1: Encode parenthesis and other control characters to manipulate LDAP queries.
+
+SSI (Server-Side Includes) Injection
+Example 1: URL encode SSI directives to bypass filters looking for SSI syntax.
+Example 2: Use hex encoding to hide SSI commands within comments or other overlooked locations.
+
+Path Manipulation
+Example 1: Employ percent encoding on path traversal sequences to evade simple path sanitization.
+Example 2: Use unusual charset encodings for file separators to bypass validation logic.
+
+Remote File Inclusion (RFI)
+Example 1: Encode the protocol and domain in an RFI payload to bypass URL validation.
+Example 2: Utilize double encoding to hide the URL of the malicious file to be included.
+
+Local File Inclusion (LFI)
+Example 1: Use URL encoding to bypass filters and include sensitive local files.
+Example 2: Encode traversal sequences in different charsets to read arbitrary files.
+
+Null Byte Injection
+Example 1: Encode a null byte in hex or URL encoding to terminate strings prematurely.
+Example 2: Exploit file upload vulnerabilities by appending a null byte to bypass extension checks.
+
+Cryptojacking Payload Delivery
+Example 1: Encode the cryptojacking script in base64 to bypass content filters.
+Example 2: Use URL encoding to embed the script in image metadata or other unsuspected locations.
+
+CORS Bypass
+Example 1: Utilize encoded origins to bypass simplistic CORS checks that don't decode the origin properly.
+Example 2: Encode HTTP methods or headers to exploit misconfigured CORS policies allowing unauthorized actions.
