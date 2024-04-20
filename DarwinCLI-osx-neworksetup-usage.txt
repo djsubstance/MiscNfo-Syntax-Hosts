@@ -1,5 +1,9 @@
-ed by 2 msn-com.olc.protection.outlook.com.
-XeninOSX:bounty subz$ sudo networksetup
+Purpose of help doc - 
+ - This is just some useful work arounds (for instance in Darwin/OSX you cannot edit /etc/resolv.conf)
+ To modify DNS try: sudo networksetup -setdnsservers "Wi-Fi" 1.1.1.1 8.8.8.8
+
+To get all network settings (as root) enter:
+sudo networksetup
 
 networksetup Help Information
 -------------------------------
