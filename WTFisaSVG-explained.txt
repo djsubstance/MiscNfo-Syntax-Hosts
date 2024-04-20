@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+        version="1.1" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        preserveAspectRatio="none" x="0px" y="0px" 
+        width="600px" height="400px"    
+        viewBox="0 0 600 600">
+
+The <svg> element  contains several attributes that define how an SVG (Scalable Vector Graphics) image is set up and displayed. SVG is an XML-based markup language for describing two-dimensional based vector graphics. Here's a breakdown of the attributes in your <svg> element and what each one means:
+
+1. xmlns="http://www.w3.org/2000/svg"
+Purpose: This attribute specifies the XML namespace for an SVG document and is necessary for the document to be properly interpreted as SVG by browsers. It tells the browser that the content within the tags is defined by the SVG specification.
+Value: The URI http://www.w3.org/2000/svg is the standard namespace for SVG elements.
+
+2. version="1.1"
+Purpose: This attribute defines the version of SVG being used. Each version of SVG might support different features.
+Value: 1.1 refers to SVG 1.1, which is a specification that includes a wide array of features from basic shapes to complex paths and interactivity.
+
+3. xmlns:xlink="http://www.w3.org/1999/xlink"
+Purpose: This attribute declares the XML namespace for the XLink specification, which is used for creating hyperlinks in SVG content. Even though modern SVG 2 removes the need for the xlink: prefix and allows linking attributes directly, many SVGs still include this for compatibility.
+Value: The URI http://www.w3.org/1999/xlink is used to namespace the linking attributes like xlink:href that might be used within the SVG.
+
+4. preserveAspectRatio="none"
+Purpose: This attribute controls how the SVG's contents are scaled in relation to its container when the aspect ratio of the SVG doesn’t match the aspect ratio of its container.
+Value: Setting this to none allows the SVG to scale to fit the entire container, ignoring its original aspect ratio. This can lead to distortion if the aspect ratios do not match.
+
+5. x="0px" y="0px"
+Purpose: These attributes specify the position of the SVG. They determine where the SVG should start inside its container.
+Value: 0px for both x and y positions the SVG at the top-left corner of its container.
+
+6. width="600px" height="400px"
+Purpose: These attributes define the width and height of the SVG element within the document.
+Value: 600px wide and 400px tall.
+
+7. viewBox="0 0 600 600"
+Purpose: The viewBox attribute defines the position and dimension, in user space, of an SVG viewport. It essentially sets up a mini coordinate system inside the SVG.
+Value: 0 0 600 600 breaks down as follows:
+The first two numbers (0 0) specify the position of the upper-left corner of the viewport.
+The second two numbers (600 600) specify the width and height of the viewport within this coordinate system.
+This setup allows the SVG content to be scaled and positioned as specified, independent of the actual size of the SVG element in the HTML document. The viewBox is especially useful for making SVGs responsive, as it controls how the contents scale instead of stretching to fit the container.
+
+
+
+
+
