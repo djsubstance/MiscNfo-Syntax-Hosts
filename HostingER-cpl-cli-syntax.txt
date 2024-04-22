@@ -1,0 +1,54 @@
+CloudPanel CLI
+
+cloudflare
+ clpctl cloudflare:update:ips
+
+cloudpanel
+ clpctl cloudpanel:enable:basic-auth --userName=john.doe --password='password123'
+ clpctl cloudpanel:disable:basic-auth
+ clpctl cloudpanel:set:release-channel --channel='test'
+
+db
+ clpctl db:show:master-credentials
+ clpctl db:add --domainName=www.domain.com --databaseName=my-database --databaseUserName=john --databaseUserPassword='!secretPassword!'
+ clpctl db:export --databaseName=my-database --file=dump.sql.gz
+ clpctl db:import --databaseName=my-database --file=dump.sql.gz
+ clpctl db:delete --databaseName=my-database
+
+lets-encrypt
+ clpctl lets-encrypt:install:certificate --domainName=www.domain.com --subjectAlternativeName=domain1.com,www.domain1.com
+
+site
+ // Adding a Node.js Site
+ clpctl site:add:nodejs --domainName=www.domain.com --nodejsVersion=20 --appPort=3000 --siteUser=john --siteUserPassword='!secretPassword!'
+ // Adding a Static HTML Site
+ clpctl site:add:static --domainName=www.domain.com --siteUser=john --siteUserPassword='!secretPassword!'
+ // Adding a PHP Site
+ clpctl site:add:php --domainName=www.domain.com --phpVersion=8.3 --vhostTemplate='Generic' --siteUser=john --siteUserPassword='!secretPassword!'
+ // Adding a Python Site
+ clpctl site:add:python --domainName=www.domain.com --pythonVersion=3.9 --appPort=8080 --siteUser=john --siteUserPassword='!secretPassword!'
+ // Adding a Reverse Proxy
+ clpctl site:add:reverse-proxy --domainName=www.domain.com --reverseProxyUrl='http://127.0.0.1:8000' --siteUser=john --siteUserPassword='!secretPassword!'
+ clpctl site:delete --domainName=www.domain.com
+ clpctl site:install:certificate --domainName=www.domain.com --privateKey=/path/to/private.key --certificate=/path/to/certificate.crt --certificateChain=/path/to/chain.crt
+
+system
+ clpctl system:permissions:reset --directories=770 --files=660 --path=.
+
+user
+ clpctl user:add --userName='john.doe' --email='john.doe@domain.com' --firstName='John' --lastName='Doe' --password='!password!' --role='user' --sites='domain.com,domain.io' --timezone='Europe/Berlin' --status='1'
+ clpctl user:delete --userName='john.doe'
+ clpctl user:list
+ clpctl user:reset:password --userName='john.doe' --password='!newPassword!'
+ clpctl user:disable:mfa --userName='john.doe'
+
+vhost-template
+ clpctl vhost-template:add --name='My Application' --file=/tmp/template.tpl
+ clpctl vhost-template:delete --name='My Application'
+ clpctl vhost-template:view --name='My Application'
+
+vhost-templates
+ clpctl vhost-templates:import
+ clpctl vhost-templates:list
+
+
