@@ -1,0 +1,39 @@
+Handling Disk-Full Situations
+  Add these lines to your rsyslog configuration file (/etc/rsyslog.conf 
+  [or a specific file in /etc/rsyslog.d/)]
+
+$WorkDirectory /var/spool/rsyslog  # make sure this directory exists
+$ActionQueueFileName fwdRule1      # unique name prefix for spool files
+$ActionQueueMaxDiskSpace 1g        # 1GB space limit on disk usage
+$ActionQueueSaveOnShutdown on      # save messages to disk on shutdown
+$ActionResumeRetryCount -1         # infinite retries on resume
+
+2. Using $ActionQueueDiskLowWaterMark
+You can specify a low watermark for disk space at which rsyslog should try to resume logging to disk after it has stopped due to disk space constraints.
+$ActionQueueDiskLowWaterMark 200m  # resume logging if disk space goes above 200MB
+
+To specifically handle situations where the disk is full, you can use the directive $ActionQueueMaxDiskSpace 
++ combine it with specific actions when the queue is full:
+
+$template DynFile,"/var/log/%HOSTNAME%/syslog.log"
+*.* ?DynFile
+& stop  # stop processing further actions if disk is full
+
+------- Log rotate -------
+/etc/logrotate.conf
+
+Add this:
+
+/var/log/syslog {
+    daily
+    rotate 7
+    compress
+    delaycompress
+    notifempty
+    create 640 root adm
+    missingok
+}
+
+
+Restart rsyslogd
+
