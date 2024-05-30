@@ -1,3 +1,50 @@
+To create a regex pattern that looks for any database error condition in the source, you can use the following comprehensive pattern. This regex aims to capture common error messages from various databases:
+
+regex
+(?:SQL\s+syntax\s+error|Warning:\s+mysql_|MySQLSyntaxErrorException|com\.mysql\.jdbc\.exceptions|SQLException|MySQLNonTransientConnectionException|MySQLTransientConnectionException|MySQLDataTruncation|MySQLIntegrityConstraintViolationException|Table\s+'.*?'\s+doesn't\s+exist|You\s+have\s+an\s+error\s+in\s+your\s+SQL\s+syntax|org\.postgresql\.util\.PSQLException|PG::SyntaxError|PG::UndefinedTable|PG::ConnectionBad|syntax\s+error\s+at\s+or\s+near|could\s+not\s+connect\s+to\s+server|role\s+does\s+not\s+exist|relation\s+".*?"\s+does\s+not\s+exist|MongoDB\s+Error|MongoException|MongoConnectionException|MongoCursorTimeoutException|MongoCursorException|MongoDuplicateKeyException|MongoExecutionTimeoutException|MongoWriteConcernException|MongoWriteException|E11000\s+duplicate\s+key\s+error|Microsoft\s+ODBC\s+SQL\s+Server\s+Driver|SQLServerException|com\.microsoft\.sqlserver\.jdbc\.SQLServerException|Unclosed\s+quotation\s+mark\s+after\s+the\s+character\s+string|Incorrect\s+syntax\s+near|ORA-\d{4,5}|OracleException|oracle\.jdbc\.driver\.OracleDriver|SQLRecoverableException|oracle\.sql\.ROWID|PLS-\d{4,5}|SP2-\d{4,5}|TNS-\d{4,5}|SQLiteException|sqlite3\.OperationalError|sqlite3\.DatabaseError|sqlite3\.DataError|sqlite3\.IntegrityError|sqlite3\.ProgrammingError|sqlite3\.NotSupportedError|sqlite\.error|near\s+"[\w]+"|CouchDB\s+error|Cassandra\s+error|com\.datastax\.driver\.core\.exceptions|DocumentNotFoundException|com\.couchbase\.client\.java\.error|org\.apache\.cassandra\.exceptions|database\s+is\s+locked|unable\s+to\s+connect\s+to\s+database|unexpected\s+end\s+of\s+command|unterminated\s+string|column\s+does\s+not\s+exist|query\s+error|database\s+error|failed\s+to\s+execute\s+query)
+
+Explanation
+This pattern combines various fragments of error messages from different database systems. The (?: ... ) non-capturing group is used to group these fragments without capturing them, which keeps the matching efficient.
+
+MySQL Errors:
+
+regex
+SQL\s+syntax\s+error|Warning:\s+mysql_|MySQLSyntaxErrorException|com\.mysql\.jdbc\.exceptions|SQLException|MySQLNonTransientConnectionException|MySQLTransientConnectionException|MySQLDataTruncation|MySQLIntegrityConstraintViolationException|Table\s+'.*?'\s+doesn't\s+exist|You\s+have\s+an\s+error\s+in\s+your\s+SQL\s+syntax
+PostgreSQL Errors:
+
+regex
+org\.postgresql\.util\.PSQLException|PG::SyntaxError|PG::UndefinedTable|PG::ConnectionBad|syntax\s+error\s+at\s+or\s+near|could\s+not\s+connect\s+to\s+server|role\s+does\s+not\s+exist|relation\s+".*?"\s+does\s+not\s+exist
+
+
+MongoDB Errors:
+
+regex
+MongoDB\s+Error|MongoException|MongoConnectionException|MongoCursorTimeoutException|MongoCursorException|MongoDuplicateKeyException|MongoExecutionTimeoutException|MongoWriteConcernException|MongoWriteException|E11000\s+duplicate\s+key\s+error
+
+
+SQL Server Errors:
+
+regex
+Microsoft\s+ODBC\s+SQL\s+Server\s+Driver|SQLServerException|com\.microsoft\.sqlserver\.jdbc\.SQLServerException|Unclosed\s+quotation\s+mark\s+after\s+the\s+character\s+string|Incorrect\s+syntax\s+near
+
+
+Oracle Errors:
+regex
+ORA-\d{4,5}|OracleException|oracle\.jdbc\.driver\.OracleDriver|SQLRecoverableException|oracle\.sql\.ROWID|PLS-\d{4,5}|SP2-\d{4,5}|TNS-\d{4,5}
+
+SQLite Errors:
+regex
+SQLiteException|sqlite3\.OperationalError|sqlite3\.DatabaseError|sqlite3\.DataError|sqlite3\.IntegrityError|sqlite3\.ProgrammingError|sqlite3\.NotSupportedError|sqlite\.error|near\s+"[\w]+"
+
+NoSQL (CouchDB, Cassandra, etc.) Errors:
+regex
+CouchDB\s+error|Cassandra\s+error|com\.datastax\.driver\.core\.exceptions|DocumentNotFoundException|com\.couchbase\.client\.java\.error|org\.apache\.cassandra\.exceptions
+
+Generic Errors:
+regex
+database\s+is\s+locked|unable\s+to\s+connect\s+to\s+database|unexpected\s+end\s+of\s+command|unterminated\s+string|column\s+does\s+not\s+exist|query\s+error|database\s+error|failed\s+to\s+execute\s+query
+
+
 ^.*_rsa$
 ^.*_dsa$
 ^.*_ed25519$
