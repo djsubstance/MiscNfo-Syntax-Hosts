@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      body {
+        background: #333;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .accordion,
+      .sub-accordion {
+        width: 80vw;
+        background-color: #222;
+        margin: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .accordion-header,
+      .sub-accordion-header {
+        padding: 10px;
+        background-color: #444;
+        cursor: pointer;
+        border: 1px solid #777;
+        text-align: center;
+      }
+
+      .accordion-content,
+      .sub-accordion-content {
+        display: none;
+        background-color: #222;
+        border: 1px solid #777;
+        border-top: none;
+        overflow: hidden;
+      }
+
+      .accordion-content p,
+      .sub-accordion-content p {
+        padding: 15px;
+      }
+
+      .sub-accordion {
+        margin-left: 20px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="accordion-container">
+      <!-- Accordions will be dynamically generated here -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const accordionContainer = $('.accordion-container');
+
+        // Generate 10 primary accordions each with 10 sub-accordions
+        for (let i = 0; i < 10; i++) {
+          const primaryAccordion = $(`
+                    <div class="accordion">
+                        <div class="accordion-header">Box ${i + 1} <i class="fa fa-chevron-down"></i></div>
+                        <div class="accordion-content"></div>
+                    </div>
+                `);
+
+          for (let j = 0; j < 10; j++) {
+            const subAccordion = $(`
+                        <div class="sub-accordion">
+                            <div class="sub-accordion-header">Sub Box ${i + 1}${String.fromCharCode(97 + j)} <i class="fa fa-chevron-down"></i></div>
+                            <div class="sub-accordion-content">
+                                <p>Sub content ${i + 1}${String.fromCharCode(97 + j)}.</p>
+                            </div>
+                        </div>
+                    `);
+
+            primaryAccordion.find('.accordion-content').append(subAccordion);
+          }
+
+          accordionContainer.append(primaryAccordion);
+        }
+
+        // Main accordion click handler
+        $(document).on('click', '.accordion-header', function() {
+          var content = $(this).next('.accordion-content');
+          $('.accordion-content').not(content).slideUp();
+          $('i', '.accordion-header').not($('i', this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+          content.slideToggle(500, function() {
+            var icon = $('i', this.previousElementSibling);
+            if (content.is(':visible')) {
+              icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+            } else {
+              icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+            }
+          });
+        });
+
+        // Sub-accordion click handler
+        $(document).on('click', '.sub-accordion-header', function() {
+          var content = $(this).next('.sub-accordion-content');
+          $('.sub-accordion-content').not(content).slideUp();
+          $('i', '.sub-accordion-header').not($('i', this)).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+          content.slideToggle(500, function() {
+            var icon = $('i', this.previousElementSibling);
+            if (content.is(':visible')) {
+              icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+            } else {
+              icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+            }
+          });
+        });
+      });
+
+    </script>
+  </body>
+
+</html>
