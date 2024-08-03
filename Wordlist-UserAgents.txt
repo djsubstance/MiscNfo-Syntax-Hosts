@@ -1,0 +1,25 @@
+# Google has code specifically to handle these UA's
+
+Safari
+Coast
+Opera
+Edge
+Microsoft Edge
+Edg/
+Opera
+OPR
+Firefox
+FxiOS
+Silk
+Android
+Chromium
+Chrome
+CriOS
+Edge
+Android
+Firefox
+FxiOS
+Opera
+Trident
+MSIE
+ved
